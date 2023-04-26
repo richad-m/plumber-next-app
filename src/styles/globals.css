@@ -19,7 +19,7 @@ html {
 }
 
 section {
-  padding: 4rem;
+  padding: 2rem 0 0 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -37,4 +37,8 @@ section {
 .navbar-item:hover {
   color: #fff;
   box-shadow: inset 200px 0 0 0 #54b3d6;
+}
+
+body {
+  font-family: "Raleway";
 }

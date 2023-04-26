@@ -1,18 +1,20 @@
 import React from "react";
 import Image from "next/image";
 import someting from "../../../assets/water-tap.png";
+import { FaHandHoldingWater } from "react-icons/fa";
 
 function Card() {
   return (
     <div className="card-container">
       <div className="card-logo m-auto">
-        <Image
+        <FaHandHoldingWater size={100} color="darkblue" />
+        {/* <Image
           src={someting}
           alt="Picture of the author"
           width={150}
           height={150}
           color="red"
-        />
+        /> */}
       </div>
       <h2 className="text-2xl card-title font-bold">Card title</h2>
       <div className="card-content">
