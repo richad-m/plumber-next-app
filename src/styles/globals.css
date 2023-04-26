@@ -1,27 +1,40 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import "./banner.css";
+@import "./button.css";
+@import "./skillSection.css";
+@import "./card.css";
+@import "./navbar.css";
+@import "./separator.css";
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --primary: "#007CBE";
+  --secondary: "#0E0E52";
+  --danger: "#A62639";
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+section {
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+}
+
+.navbar-item {
+  box-shadow: inset 0 0 0 0 var(--danger);
+  color: #54b3d6;
+  padding: 0.8rem 1.2rem;
+  margin: 0 -0.25rem;
+  transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  border-radius: 4px;
+}
+.navbar-item:hover {
+  color: #fff;
+  box-shadow: inset 200px 0 0 0 #54b3d6;
 }
