@@ -7,7 +7,7 @@ const Banner = ({ heading, message }: { heading: string; message: string }) => {
         <h2 className="text-3xl font-bold">{heading}</h2>
         <p className="py-5 text-xl ">{message}</p>
         <div className="button-container">
-          <Button text="Appel urgence" styleType="primary" />
+          <Button text="Appel urgence" styleType="primary" as="a" />
           <Button text="Nous contacter" styleType="primary" />
         </div>
       </div>
