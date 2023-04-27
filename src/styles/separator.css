@@ -1,7 +1,7 @@
 .separator {
-  border-color: red;
+  border-color: var(--teal);
   height: 3px;
   width: auto;
-  background-color: red;
+  background-color: var(--teal);
   margin: 0 4rem;
 }

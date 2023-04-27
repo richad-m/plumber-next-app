@@ -7,15 +7,19 @@
 @import "./card.css";
 @import "./navbar.css";
 @import "./separator.css";
+@import "./numbers.css";
 
 :root {
-  --primary: "#007CBE";
-  --secondary: "#0E0E52";
-  --danger: "#A62639";
+  --primary: #007cbe;
+  --secondary: #0e0e52;
+  --danger: #a62639;
+  --teal: #54b3d6;
 }
 
 html {
-  scroll-behavior: smooth;
+  /* !important to work when clicking in nav menu */
+  scroll-behavior: smooth !important;
+  background: #f5fcff;
 }
 
 section {
@@ -23,12 +27,11 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: white;
 }
 
 .navbar-item {
-  box-shadow: inset 0 0 0 0 var(--danger);
-  color: #54b3d6;
+  box-shadow: inset 0 0 0 0 var(--teal);
+  color: var(--teal);
   padding: 0.8rem 1.2rem;
   margin: 0 -0.25rem;
   transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
@@ -36,9 +39,13 @@ section {
 }
 .navbar-item:hover {
   color: #fff;
-  box-shadow: inset 200px 0 0 0 #54b3d6;
+  box-shadow: inset 200px 0 0 0 var(--teal);
 }
 
 body {
   font-family: "Raleway";
+}
+
+.teal {
+  color: var(--teal);
 }
