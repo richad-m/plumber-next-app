@@ -7,7 +7,7 @@ function Navbar() {
   const handleNav = () => setNav((nav) => !nav);
   return (
     <nav>
-      <div className="fixed w-full z-10  navbar">
+      <div className="w-full z-10  navbar">
         <div className="flex m-auto justify-between items-center p-4">
           <Link href="/" id="nav-button">
             <h1 className="font-bold text-4xl navbar-title">Titre à définir</h1>
@@ -17,7 +17,7 @@ function Navbar() {
               <Link href="#skill-section">Expertise</Link>
             </li>
             <li className="p-4 navbar-item">
-              <Link href="#key-number">Chiffres clés</Link>
+              <Link href="#numbers">Chiffres clés</Link>
             </li>
             <li className="p-4 navbar-item">
               <Link href="#reviews">Avis</Link>

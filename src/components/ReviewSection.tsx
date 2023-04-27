@@ -6,8 +6,8 @@ function ReviewSection() {
   return (
     <>
       <section id="reviews">
-        <h2 className="skill-title text-4xl">Nos avis</h2>
-        <div className="block skill-container sm:flex ">
+        <h2 className="skill-title text-4xl teal">Nos avis</h2>
+        <div className="block skill-container sm:flex">
           <Card />
           <Card />
           <Card />
