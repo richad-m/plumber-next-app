@@ -9,7 +9,7 @@ const Banner = ({ message }: { message: string }) => {
           <FullLogo />
           <p className="py-5 text-xl ">{message}</p>
           <div className="button-container">
-            <Button text="Appel urgence" styleType="primary" as="a" />
+            <Button text="Une urgence ?" styleType="primary" as="a" />
             <Button text="Nous contacter" styleType="primary" />
           </div>
         </div>

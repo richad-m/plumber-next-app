@@ -37,3 +37,7 @@ body {
 .teal {
   color: var(--teal);
 }
+
+.logo-title {
+  font-family: "Caveat";
+}

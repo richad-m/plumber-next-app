@@ -43,7 +43,9 @@ function Navbar() {
               className="sm:w-50 w-10"
             />
 
-            <h1 className="font-bold sm:text-4xl navbar-title">AC PRO</h1>
+            <h1 className="font-bold sm:text-4xl navbar-title logo-title ">
+              AC PRO
+            </h1>
           </Link>
           <ul className="hidden sm:flex gap-9">
             <li className="p-4 navbar-item">
