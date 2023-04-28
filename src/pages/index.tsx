@@ -12,11 +12,13 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <Banner heading="Logo + nom" message="01 00 00 00 00" />
-      <SkillSection />
-      <ReviewSection />
-      <NumbersSection />
-      <ContactForm />
+      <main className="relative">
+        <Banner message="01 00 00 00 00" />
+        <SkillSection />
+        <ReviewSection />
+        <NumbersSection />
+        <ContactForm />
+      </main>
     </>
   );
 }

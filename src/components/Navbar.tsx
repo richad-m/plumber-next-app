@@ -1,20 +1,41 @@
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import Image from "next/image";
 import { FaBeer } from "react-icons/fa";
-function Navbar() {
-  const [nav, setNav] = useState(false);
+import logo from "../../assets/logo.svg";
 
-  const handleNav = () => setNav((nav) => !nav);
+function Navbar() {
+  const [isNavbarSolid, setIsNavbarSolid] = useState(false);
+
+  //navbar scroll changeBackground function
+  const changeBackground = () => {
+    if (window.scrollY >= 150) {
+      setIsNavbarSolid(true);
+    } else {
+      setIsNavbarSolid(false);
+    }
+  };
+
+  useEffect(() => {
+    changeBackground();
+    // adding the event when scroll change background
+    window.addEventListener("scroll", changeBackground);
+  });
+
   return (
-    <nav>
-      <div className="w-full z-10  navbar">
+    <nav className="sticky top-0 z-50 ">
+      <div
+        className={`w-full px-10 ${isNavbarSolid ? "solid-navbar" : "navbar"}`}
+      >
         <div className="flex m-auto justify-between items-center p-4">
-          <Link href="/" id="nav-button">
-            <h1 className="font-bold text-4xl navbar-title">Titre à définir</h1>
+          <Link href="/" id="nav-button" className="flex">
+            <Image src={logo} alt="Picture of the author" width={50} />
+
+            <h1 className="font-bold text-4xl navbar-title">AC PRO</h1>
           </Link>
-          <ul className="hidden sm:flex">
+          <ul className="hidden sm:flex gap-9">
             <li className="p-4 navbar-item">
-              <Link href="#skill-section">Expertise</Link>
+              <Link href="#skill-section">Services</Link>
             </li>
             <li className="p-4 navbar-item">
               <Link href="#numbers">Chiffres clés</Link>
