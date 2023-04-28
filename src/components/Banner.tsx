@@ -5,7 +5,7 @@ const Banner = ({ message }: { message: string }) => {
   return (
     <>
       <section className="banner">
-        <div className="p-5 text-white z-[2] ml-[5rem] mt-[5rem]">
+        <div className="sm:p-5 text-white z-[2] sm:ml-[5rem] sm:mt-[5rem] ">
           <FullLogo />
           <p className="py-5 text-xl ">{message}</p>
           <div className="button-container">
