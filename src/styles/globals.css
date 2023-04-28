@@ -8,6 +8,7 @@
 @import "./navbar.css";
 @import "./separator.css";
 @import "./numbers.css";
+@import "./fullLogo.css";
 
 :root {
   --primary: #007cbe;
