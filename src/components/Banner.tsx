@@ -1,18 +1,20 @@
 import Button from "./UI/Button";
 import FullLogo from "./UI/FullLogo";
 
-const Banner = ({ heading, message }: { heading: string; message: string }) => {
+const Banner = ({ message }: { message: string }) => {
   return (
-    <section className="banner">
-      <div className="p-5 text-white z-[2] ml-[5rem] mt-[5rem]">
-        <FullLogo />
-        <p className="py-5 text-xl ">{message}</p>
-        <div className="button-container">
-          <Button text="Appel urgence" styleType="primary" as="a" />
-          <Button text="Nous contacter" styleType="primary" />
+    <>
+      <section className="banner">
+        <div className="sm:p-5 text-white z-[2] sm:ml-[5rem] sm:mt-[5rem] ">
+          <FullLogo />
+          <p className="py-5 text-xl ">{message}</p>
+          <div className="button-container">
+            <Button text="Appel urgence" styleType="primary" as="a" />
+            <Button text="Nous contacter" styleType="primary" />
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 

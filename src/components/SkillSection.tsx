@@ -6,7 +6,7 @@ function SkillSection() {
   return (
     <>
       <section className="skill-section" id="skill-section">
-        <h2 className="skill-title text-4xl teal">Expertise</h2>
+        <h2 className="skill-title text-4xl teal">Services</h2>
         <div className="block sm:flex skill-container">
           <Card />
           <Card />
