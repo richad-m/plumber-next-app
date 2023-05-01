@@ -1,229 +1,158 @@
-import React, { FormEvent, FormEventHandler } from "react";
+import React, { FormEvent, useRef, useState } from "react";
+
+interface ContactFormValues {
+  name: { value?: string };
+  firstName: { value?: string };
+  address: { value?: string };
+  service: { value?: string };
+  email: { value?: string };
+  message: { value?: string };
+}
+interface ContactFormValue {
+  name?: string;
+  firstName?: string;
+  address?: string;
+  service?: string;
+  email?: string;
+  message?: string;
+}
 
 function ContactForm() {
+  const [formValues, setFormValues] = useState<ContactFormValue>({});
+
   const submitHandler = (event: FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
+    // alert(formValues);
+    // setFormValues({});
   };
 
   return (
-    <div className="relative flex flex-col justify-center min-h-screen overflow-hidden ">
-      <div className="w-4/5  sm:w-full p-6 m-auto bg-white rounded-md shadow-xl shadow-rose-600/40 ring-2 ring-indigo-600 lg:max-w-xl">
-        <form className="mt-6" onSubmit={submitHandler}>
-          <div className="flex-col sm:flex-row gap-4">
-            <div className="mb-2 w-1/2">
+    <div className="w-4/5 rounded-xl bg-white shadow-xl overflow-hidden">
+      <div className="form-header flex flex-col font-bold sm:items-center text-white">
+        <h2 className="text-xl">Contactez-nous pour prendre rendez-vous</h2>
+        <p>Nous vous rappelons dans l&apos;heure !</p>
+      </div>
+      <div className="p-6">
+        <form onSubmit={submitHandler}>
+          <div className="flex-col sm:flex-row sm:gap-4 flex">
+            <div className="mb-2 w-full sm:w-1/2">
               <label>
-                <span className="text-gray-700">Nom</span>
+                <span>Nom</span>
                 <input
                   type="text"
+                  value={formValues.name}
                   name="name"
-                  className="
-              w-full
-              block px-3 py-2 mt-2
-              border-gray-300
-              rounded-md
-              shadow-sm
-              focus:border-indigo-300
-              focus:ring
-              focus:ring-indigo-200
-              focus:ring-opacity-50
-            "
+                  className="w-full"
                   placeholder="John cooks"
+                  onChange={(event) =>
+                    setFormValues((previousValues) => ({
+                      ...previousValues,
+                      name: event.target.value,
+                    }))
+                  }
                 />
               </label>
             </div>
-            <div className="mb-2 w-1/2">
+            <div className="mb-2 w-full sm:w-1/2">
               <label>
-                <span className="text-gray-700">Prénom</span>
+                <span>Prénom</span>
                 <input
                   type="text"
-                  name="name"
-                  className="
-              w-full
-              block px-3 py-2 mt-2
-              border-gray-300
-              rounded-md
-              shadow-sm
-              focus:border-indigo-300
-              focus:ring
-              focus:ring-indigo-200
-              focus:ring-opacity-50
-            "
+                  name="firstName"
+                  value={formValues.firstName}
+                  className="w-full"
                   placeholder="John cooks"
+                  onChange={(event) =>
+                    setFormValues((previousValues) => ({
+                      ...previousValues,
+                      firstName: event.target.value,
+                    }))
+                  }
                 />
               </label>
             </div>
           </div>
-          <div className="mb-2 w-1/2">
+          <div className="mb-2 w-full">
             <label>
-              <span className="text-gray-700">Adresse</span>
+              <span>Adresse</span>
               <input
                 type="text"
-                name="name"
-                className="
-              w-full
-              block px-3 py-2 mt-2
-              border-gray-300
-              rounded-md
-              shadow-sm
-              focus:border-indigo-300
-              focus:ring
-              focus:ring-indigo-200
-              focus:ring-opacity-50
-            "
-                placeholder="John cooks"
+                name="address"
+                className="w-full"
+                value={formValues.address}
+                placeholder="10 rue des Acacias"
+                onChange={(event) =>
+                  setFormValues((previousValues) => ({
+                    ...previousValues,
+                    address: event.target.value,
+                  }))
+                }
               />
             </label>
           </div>
           <div className="mb-2">
             <label>
-              <span className="text-gray-700">Email</span>
+              <span>Email</span>
               <input
                 name="email"
                 type="email"
-                className="
-              block
-              w-full
-              mt-2 px-3 py-2
-              border-gray-300
-              rounded-md
-              shadow-sm
-              focus:border-indigo-300
-              focus:ring
-              focus:ring-indigo-200
-              focus:ring-opacity-50
-            "
-                placeholder="john.cooks@example.com"
+                value={formValues.email}
+                className="block w-full"
+                placeholder="jacques@dupont.com"
                 required
+                onChange={(event) =>
+                  setFormValues((previousValues) => ({
+                    ...previousValues,
+                    email: event.target.value,
+                  }))
+                }
               />
             </label>
           </div>
           <div className="mb-2">
             <label>
-              <span className="text-gray-700">Email</span>
+              <span>Service</span>
               <select
-                name="email"
-                className="
-              block
-              w-full
-              mt-2 px-3 py-2
-              border-gray-300
-              rounded-md
-              shadow-sm
-              focus:border-indigo-300
-              focus:ring
-              focus:ring-indigo-200
-              focus:ring-opacity-50
-            "
+                name="service"
+                value={formValues.service}
+                className="block w-full"
                 placeholder="john.cooks@example.com"
                 required
+                onChange={(event) =>
+                  setFormValues((previousValues) => ({
+                    ...previousValues,
+                    service: event.target.value,
+                  }))
+                }
               >
-                <option
-                  value="volvo"
-                  className="              block
-              w-full
-              mt-2 px-3 py-2
-              border-gray-300
-              rounded-md
-              shadow-sm
-              focus:border-indigo-300
-              focus:ring
-              focus:ring-indigo-200
-              focus:ring-opacity-50
-            "
-                >
-                  Volvo
-                </option>
-                <option
-                  value="saab"
-                  className="block
-                         w-full
-                         mt-2 px-3 py-2
-                         border-gray-300
-                         rounded-md
-                         shadow-sm
-                         focus:border-indigo-300
-                         focus:ring
-                         focus:ring-indigo-200
-                         focus:ring-opacity-50
-                       "
-                >
-                  Saab
-                </option>
-                <option
-                  value="mercedes"
-                  className="              block
-                w-full
-                mt-2 px-3 py-2
-                border-gray-300
-                rounded-md
-                shadow-sm
-                focus:border-indigo-300
-                focus:ring
-                focus:ring-indigo-200
-                focus:ring-opacity-50
-              "
-                >
-                  Mercedes
-                </option>
-                <option
-                  value="audi"
-                  className="              block
-                w-full
-                mt-2 px-3 py-2
-                border-gray-300
-                rounded-md
-                shadow-sm
-                focus:border-indigo-300
-                focus:ring
-                focus:ring-indigo-200
-                focus:ring-opacity-50
-              "
-                >
-                  Audi
-                </option>
+                <option value="" />
+                <option value="intervention">Intervention</option>
+                <option value="depannage">Dépannage</option>
               </select>
             </label>
           </div>
           <div className="mb-2">
             <label>
-              <span className="text-gray-700">Message</span>
+              <span>Message</span>
               <textarea
                 name="message"
-                className="
-              block
-              w-full
-              mt-2 px-3 py-3
-              border-gray-300
-              rounded-md
-              shadow-sm
-              focus:border-indigo-300
-              focus:ring
-              focus:ring-indigo-200
-              focus:ring-opacity-50
-            "
+                value={formValues.message}
+                className="w-full"
                 rows={5}
-              ></textarea>
+                onChange={(event) =>
+                  setFormValues((previousValues) => ({
+                    ...previousValues,
+                    message: event.target.value,
+                  }))
+                }
+              />
             </label>
           </div>
-          <div className="mb-6">
-            <button
-              type="submit"
-              className="
-              h-10
-              px-5
-              text-indigo-100
-              bg-indigo-700
-              rounded-lg
-              transition-colors
-              duration-150
-              focus:shadow-outline
-              hover:bg-indigo-800
-            "
-            >
+          <div className="">
+            <button type="submit" className="submit block">
               Nous contacter
             </button>
           </div>
-          <div></div>
         </form>
       </div>
     </div>

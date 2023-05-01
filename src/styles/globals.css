@@ -1,3 +1,4 @@
+@import "./contactForm.css";
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
@@ -9,12 +10,14 @@
 @import "./separator.css";
 @import "./numbers.css";
 @import "./fullLogo.css";
+@import "./serviceIcon.css";
 
 :root {
   --primary: #007cbe;
   --secondary: #0e0e52;
   --danger: #a62639;
   --teal: #54b3d6;
+  --darkTeal: #3b7f98;
 }
 
 html {

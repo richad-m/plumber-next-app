@@ -1,0 +1,13 @@
+.round {
+  background-color: rgba(242, 227, 230, 0.98);
+  border-radius: 100%;
+  position: relative;
+  width: 5rem;
+  aspect-ratio: 1 / 1;
+}
+
+.service-icon {
+  position: absolute;
+  bottom: 0;
+  left: 2rem;
+}
