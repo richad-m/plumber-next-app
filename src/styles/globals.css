@@ -9,6 +9,7 @@
 @import "./separator.css";
 @import "./numbers.css";
 @import "./fullLogo.css";
+@import "./serviceIcon.css";
 
 :root {
   --primary: #007cbe;
