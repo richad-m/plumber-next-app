@@ -1,8 +1,6 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import { FiAlignJustify } from "react-icons/fi";
-import { FaWindowClose } from "react-icons/fa";
 import logo from "../../assets/logo.svg";
 
 function Navbar() {
@@ -59,6 +57,11 @@ function Navbar() {
             </li>
             <li className="p-4 navbar-item">
               <Link href="#service">Blog</Link>
+            </li>
+            <li className="p-4">
+              <Link href="#contact" className="primary-link">
+                Demande de devis
+              </Link>
             </li>
           </ul>
           {/* Mobile button */}

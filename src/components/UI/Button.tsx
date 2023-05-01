@@ -4,10 +4,12 @@ function Button({
   text,
   styleType,
   as,
+  type,
 }: {
   text: string;
   styleType: string;
   as?: string;
+  type?: "submit";
 }) {
   if (as === "a") {
     return (
@@ -16,7 +18,11 @@ function Button({
       </a>
     );
   }
-  return <button className={styleType}>{text}</button>;
+  return (
+    <button type={type} className={styleType}>
+      {text}
+    </button>
+  );
 }
 
 export default Button;

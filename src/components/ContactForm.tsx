@@ -115,7 +115,9 @@ function ContactForm() {
               <select
                 name="service"
                 value={formValues.service}
-                className="block w-full"
+                className={`block w-full ${
+                  !!formValues.service ? "" : "text-gray-400"
+                }`}
                 placeholder="john.cooks@example.com"
                 required
                 onChange={(event) =>
@@ -125,7 +127,7 @@ function ContactForm() {
                   }))
                 }
               >
-                <option value="" />
+                <option value="">Séléctionner une option</option>
                 <option value="intervention">Intervention</option>
                 <option value="depannage">Dépannage</option>
               </select>
@@ -136,6 +138,7 @@ function ContactForm() {
               <span>Message</span>
               <textarea
                 name="message"
+                placeholder="Décrivez le plus précisemment possible votre demande"
                 value={formValues.message}
                 className="w-full"
                 rows={5}

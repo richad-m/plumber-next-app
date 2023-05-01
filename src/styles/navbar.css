@@ -6,6 +6,19 @@
   color: white;
 }
 
+.primary-link {
+  background-color: var(--teal);
+  padding: 0.8rem;
+  border-radius: 0.4rem;
+  font-weight: 600;
+}
+
+.primary-link:hover {
+  background-color: var(--darkTeal);
+  padding: 0.8rem;
+  border-radius: 0.4rem;
+}
+
 .solid-navbar {
   position: absolute;
   top: 0;
