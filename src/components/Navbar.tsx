@@ -46,17 +46,17 @@ function Navbar() {
             </h1>
           </Link>
           <ul className="hidden sm:flex gap-9">
-            <li className="p-4 navbar-item">
-              <Link href="#service">Services</Link>
+            <li className="navbar-item my-auto">
+              <Link href="#service">Accueil</Link>
             </li>
-            <li className="p-4 navbar-item">
-              <Link href="#service">Chiffres clés</Link>
+            <li className="navbar-item my-auto">
+              <Link href="#service">Plomberie</Link>
             </li>
-            <li className="p-4 navbar-item">
-              <Link href="#service">Avis</Link>
+            <li className="navbar-item my-auto">
+              <Link href="#service">Conseils</Link>
             </li>
-            <li className="p-4 navbar-item">
-              <Link href="#service">Blog</Link>
+            <li className="navbar-item my-auto">
+              <Link href="#service">FAQ</Link>
             </li>
             <li className="p-4">
               <Link href="#contact" className="primary-link">
@@ -87,19 +87,31 @@ function Navbar() {
                 className="p-4 text-4xl text-white"
                 onClick={toggleMobileNavMenu}
               >
-                <Link href="#service">Chiffres clés</Link>
+                <Link href="#service">Accueil</Link>
               </li>
               <li
                 className="p-4 text-4xl text-white"
                 onClick={toggleMobileNavMenu}
               >
-                <Link href="#service">Blog</Link>
+                <Link href="#service">Plomberie</Link>
               </li>
               <li
                 className="p-4 text-4xl text-white"
                 onClick={toggleMobileNavMenu}
               >
-                <Link href="#service">Avis</Link>
+                <Link href="#service">Conseils</Link>
+              </li>
+              <li
+                className="p-4 text-4xl text-white"
+                onClick={toggleMobileNavMenu}
+              >
+                <Link href="#service">FAQ</Link>
+              </li>
+              <li
+                className="p-4 text-4xl text-white"
+                onClick={toggleMobileNavMenu}
+              >
+                <Link href="#service">Demande de devis</Link>
               </li>
             </ul>
           </div>
