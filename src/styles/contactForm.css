@@ -1,0 +1,29 @@
+.form-header {
+  background: var(--teal);
+  padding: 1.2rem;
+}
+
+input,
+textarea,
+select {
+  background: rgb(238, 237, 237);
+  border-radius: 0.4rem;
+  padding: 0.4rem !important;
+}
+
+span {
+  color: var(--teal);
+  font-weight: 800;
+}
+
+.submit {
+  background-color: var(--teal) !important;
+  padding: 1.2rem;
+  color: white;
+  border-radius: 0.4rem;
+  font-weight: 700;
+}
+
+.submit:hover {
+  background-color: var(--darkTeal) !important;
+}
