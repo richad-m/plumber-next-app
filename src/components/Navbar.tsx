@@ -1,11 +1,14 @@
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { ReactEventHandler, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import logo from "../../assets/logo.svg";
+import { FiChevronDown } from "react-icons/fi";
 
 function Navbar() {
   const [isNavbarSolid, setIsNavbarSolid] = useState(false);
-  const [displayMobileNavMenu, setDisplayMobileNavMenu] = useState(false);
+  const [shouldDisplayMobileMenu, setShouldDisplayMobileMenu] = useState(false);
+  const [shouldDisplayHoverMenu, setShouldDisplayHoverMenu] = useState(false);
+  const ref = useRef<HTMLLIElement>(null);
 
   //navbar scroll changeBackground function
   const changeBackground = () => {
@@ -22,8 +25,31 @@ function Navbar() {
     window.addEventListener("scroll", changeBackground);
   });
 
+  useEffect(() => {
+    const handler = (event: any) => {
+      if (
+        shouldDisplayHoverMenu &&
+        ref.current &&
+        !ref.current.contains(event.target)
+      ) {
+        setShouldDisplayHoverMenu(false);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+    document.addEventListener("touchstart", handler);
+    return () => {
+      // Cleanup the event listener
+      document.removeEventListener("mousedown", handler);
+      document.removeEventListener("touchstart", handler);
+    };
+  }, [setShouldDisplayHoverMenu, shouldDisplayHoverMenu]);
+
+  // Function to close dropdown
+  const closeHoverMenu = () => {
+    setShouldDisplayHoverMenu(false);
+  };
   const toggleMobileNavMenu = (): void =>
-    setDisplayMobileNavMenu((previousState) => !previousState);
+    setShouldDisplayMobileMenu((previousState) => !previousState);
 
   return (
     <nav className="sticky top-0 z-50 ">
@@ -49,8 +75,40 @@ function Navbar() {
             <li className="navbar-item my-auto">
               <Link href="#service">Accueil</Link>
             </li>
-            <li className="navbar-item my-auto">
-              <Link href="#service">Plomberie</Link>
+            <li className="navbar-item my-auto" ref={ref}>
+              <button
+                className="flex items-center gap-2"
+                onClick={() =>
+                  setShouldDisplayHoverMenu((previousValue) => !previousValue)
+                }
+              >
+                Plomberie
+                <FiChevronDown></FiChevronDown>
+              </button>
+              {shouldDisplayHoverMenu && (
+                <div>
+                  <ul className="absolute navbar-hover-menu">
+                    <li className="navbar-hover-menu-item">
+                      <Link
+                        href="#contact"
+                        className="flex items-center gap-2"
+                        onClick={closeHoverMenu}
+                      >
+                        Dépannage
+                      </Link>
+                    </li>
+                    <li className="navbar-hover-menu-item">
+                      <Link
+                        href="#contact"
+                        className="flex items-center gap-2"
+                        onClick={closeHoverMenu}
+                      >
+                        Services
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              )}
             </li>
             <li className="navbar-item my-auto">
               <Link href="#service">Conseils</Link>
@@ -67,7 +125,7 @@ function Navbar() {
           {/* Mobile button */}
           <button
             className={`sm:hidden block hamburger ${
-              displayMobileNavMenu && "open"
+              shouldDisplayMobileMenu && "open"
             }`}
             onClick={toggleMobileNavMenu}
           >
@@ -79,7 +137,7 @@ function Navbar() {
 
           <div
             className={`${
-              displayMobileNavMenu ? "flex open" : "hidden"
+              shouldDisplayMobileMenu ? "flex open" : "hidden"
             } menu-overlay  justify-center`}
           >
             <ul className={`sm:flex-row flex-col h-full nav`}>

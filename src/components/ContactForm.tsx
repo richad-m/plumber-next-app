@@ -1,20 +1,13 @@
 import React, { FormEvent, useRef, useState } from "react";
 
-interface ContactFormValues {
-  name: { value?: string };
-  firstName: { value?: string };
-  address: { value?: string };
-  service: { value?: string };
-  email: { value?: string };
-  message: { value?: string };
-}
 interface ContactFormValue {
   name?: string;
-  firstName?: string;
+  zipCode?: string;
   address?: string;
   service?: string;
   email?: string;
   message?: string;
+  phoneNumber?: string;
 }
 
 function ContactForm() {
@@ -34,57 +27,80 @@ function ContactForm() {
       </div>
       <div className="p-6">
         <form onSubmit={submitHandler}>
+          <div className="mb-2 w-full">
+            <label>
+              <span>Nom*</span>
+              <input
+                type="text"
+                value={formValues.name}
+                name="name"
+                className="w-full"
+                placeholder="Jacques Dupont"
+                onChange={(event) =>
+                  setFormValues((previousValues) => ({
+                    ...previousValues,
+                    name: event.target.value,
+                  }))
+                }
+                required
+              />
+            </label>
+          </div>
           <div className="flex-col sm:flex-row sm:gap-4 flex">
-            <div className="mb-2 w-full sm:w-1/2">
+            <div className="mb-2 w-full">
               <label>
-                <span>Nom</span>
+                <span>Adresse*</span>
                 <input
                   type="text"
-                  value={formValues.name}
-                  name="name"
+                  name="address"
                   className="w-full"
-                  placeholder="John cooks"
+                  value={formValues.address}
+                  placeholder="10 rue des Acacias"
                   onChange={(event) =>
                     setFormValues((previousValues) => ({
                       ...previousValues,
-                      name: event.target.value,
+                      address: event.target.value,
                     }))
                   }
+                  required
                 />
               </label>
             </div>
-            <div className="mb-2 w-full sm:w-1/2">
+            <div className="mb-2 w-full">
               <label>
-                <span>Prénom</span>
+                <span>Code postal*</span>
                 <input
                   type="text"
-                  name="firstName"
-                  value={formValues.firstName}
+                  name="zipCode"
                   className="w-full"
-                  placeholder="John cooks"
+                  value={formValues.zipCode}
+                  placeholder="75000"
                   onChange={(event) =>
                     setFormValues((previousValues) => ({
                       ...previousValues,
-                      firstName: event.target.value,
+                      zipCode: event.target.value,
                     }))
                   }
+                  required
                 />
               </label>
             </div>
           </div>
-          <div className="mb-2 w-full">
+
+          <div className="mb-2">
             <label>
-              <span>Adresse</span>
+              <span>Numéro de téléphone*</span>
               <input
-                type="text"
-                name="address"
-                className="w-full"
-                value={formValues.address}
-                placeholder="10 rue des Acacias"
+                name="phone"
+                type="tel"
+                value={formValues.phoneNumber}
+                className="block w-full"
+                placeholder="06 12 34 56 78"
+                required
                 onChange={(event) =>
                   setFormValues((previousValues) => ({
                     ...previousValues,
-                    address: event.target.value,
+                    phoneNumber: event.target.value,
                   }))
                 }
               />
@@ -92,7 +108,7 @@ function ContactForm() {
           </div>
           <div className="mb-2">
             <label>
-              <span>Email</span>
+              <span>Email*</span>
               <input
                 name="email"
                 type="email"
@@ -111,7 +127,7 @@ function ContactForm() {
           </div>
           <div className="mb-2">
             <label>
-              <span>Service</span>
+              <span>Service*</span>
               <select
                 name="service"
                 value={formValues.service}
@@ -151,10 +167,11 @@ function ContactForm() {
               />
             </label>
           </div>
-          <div className="">
+          <div className="flex justify-between items-center text-italic sm:flex-row flex-col">
             <button type="submit" className="submit block">
               Nous contacter
             </button>
+            <p>* Champs obligatoires</p>
           </div>
         </form>
       </div>
