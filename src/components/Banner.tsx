@@ -5,12 +5,22 @@ const Banner = ({ message }: { message: string }) => {
   return (
     <>
       <section className="banner">
-        <div className="sm:p-5 text-white z-[2] sm:ml-[5rem] sm:mt-[5rem] ">
+        <div className="sm:p-5 text-white z-[2] sm:ml-[5rem] sm:mt-[5rem] flex flex-col items-center">
           <FullLogo />
-          <p className="py-5 text-xl ">{message}</p>
+          <p className="py-5 text-4xl ">{message}</p>
           <div className="button-container">
-            <Button text="Une urgence ?" styleType="primary" as="a" />
-            <Button text="Nous contacter" styleType="primary" />
+            <Button
+              text="Une urgence ?"
+              styleType="primary"
+              as="a"
+              href="tel:0100000000"
+            />
+            <Button
+              text="Nous contacter"
+              styleType="primary"
+              as="a"
+              href="#contact"
+            />
           </div>
         </div>
       </section>

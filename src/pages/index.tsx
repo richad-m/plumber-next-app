@@ -1,6 +1,5 @@
 import Banner from "../components/Banner";
 import Navbar from "../components/Navbar";
-import SkillSection from "../components/SkillSection";
 import ContactSection from "../components/ContactSection";
 
 export default function Home() {

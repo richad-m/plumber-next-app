@@ -5,15 +5,17 @@ function Button({
   styleType,
   as,
   type,
+  href,
 }: {
   text: string;
   styleType: string;
   as?: string;
   type?: "submit";
+  href?: string;
 }) {
-  if (as === "a") {
+  if (as === "a" && href) {
     return (
-      <a href="tel:0100000000" className={`${styleType} button-as-link`}>
+      <a href={href} className={`${styleType} button-as-link`}>
         {text}
       </a>
     );
