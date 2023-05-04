@@ -1,11 +1,11 @@
 import Link from "next/link";
-import React, { ReactEventHandler, useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import logo from "../../assets/logo.svg";
 import { FiChevronDown } from "react-icons/fi";
 
-function Navbar() {
-  const [isNavbarSolid, setIsNavbarSolid] = useState(false);
+function Navbar({ isHomePage }: { isHomePage?: boolean }) {
+  const [isNavbarSolid, setIsNavbarSolid] = useState(!!isHomePage);
   const [shouldDisplayMobileMenu, setShouldDisplayMobileMenu] = useState(false);
   const [shouldDisplayHoverMenu, setShouldDisplayHoverMenu] = useState(false);
   const ref = useRef<HTMLLIElement>(null);
@@ -20,9 +20,11 @@ function Navbar() {
   };
 
   useEffect(() => {
-    changeBackground();
-    // adding the event when scroll change background
-    window.addEventListener("scroll", changeBackground);
+    if (isHomePage) {
+      changeBackground();
+      // adding the event when scroll change background
+      window.addEventListener("scroll", changeBackground);
+    }
   });
 
   useEffect(() => {
@@ -55,7 +57,7 @@ function Navbar() {
     <nav className="sticky top-0 z-50 ">
       <div
         className={`w-full sm:px-10 ${
-          isNavbarSolid ? "solid-navbar" : "navbar"
+          isNavbarSolid || !isHomePage ? "solid-navbar" : "navbar"
         }`}
       >
         <div className="flex m-auto justify-between items-center p-4">
@@ -117,7 +119,7 @@ function Navbar() {
               <Link href="#service">FAQ</Link>
             </li>
             <li className="p-4">
-              <Link href="#contact" className="primary-link">
+              <Link href="/contact" className="primary-link">
                 Demande de devis
               </Link>
             </li>
@@ -169,7 +171,7 @@ function Navbar() {
                 className="p-4 text-4xl text-white"
                 onClick={toggleMobileNavMenu}
               >
-                <Link href="#service">Demande de devis</Link>
+                <Link href="/contact">Demande de devis</Link>
               </li>
             </ul>
           </div>

@@ -6,10 +6,9 @@ import { PHONE_NUMBER } from "../constants/phoneNumber";
 export default function Home() {
   return (
     <>
-      <Navbar />
+      <Navbar isHomePage />
       <main className="relative">
         <Banner message={PHONE_NUMBER} />
-        <ContactSection />
       </main>
     </>
   );
