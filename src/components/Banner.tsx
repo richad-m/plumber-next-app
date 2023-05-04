@@ -7,7 +7,7 @@ const Banner = ({ message }: { message: string }) => {
       <section className="banner">
         <div className="sm:p-5 text-white z-[2] sm:ml-[5rem] sm:mt-[5rem] flex flex-col items-center">
           <FullLogo />
-          <p className="py-5 text-4xl sm:text-6xl ">{message}</p>
+          <p className="py-5 text-4xl sm:text-6xl">{message}</p>
           <div className="button-container">
             <Button
               text="Une urgence ?"
@@ -19,7 +19,7 @@ const Banner = ({ message }: { message: string }) => {
               text="Nous contacter"
               styleType="primary"
               as="a"
-              href="#contact"
+              href="/contact"
             />
           </div>
         </div>

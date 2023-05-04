@@ -75,7 +75,7 @@ function Navbar({ isHomePage }: { isHomePage?: boolean }) {
           </Link>
           <ul className="hidden sm:flex gap-9">
             <li className="navbar-item my-auto">
-              <Link href="#service">Accueil</Link>
+              <Link href="/">Accueil</Link>
             </li>
             <li className="navbar-item my-auto" ref={ref}>
               <button
@@ -147,7 +147,7 @@ function Navbar({ isHomePage }: { isHomePage?: boolean }) {
                 className="p-4 text-4xl text-white"
                 onClick={toggleMobileNavMenu}
               >
-                <Link href="#service">Accueil</Link>
+                <Link href="/">Accueil</Link>
               </li>
               <li
                 className="p-4 text-4xl text-white"
