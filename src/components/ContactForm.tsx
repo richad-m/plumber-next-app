@@ -8,6 +8,7 @@ interface ContactFormValue {
   email?: string;
   message?: string;
   phoneNumber?: string;
+  isEmergency?: boolean;
 }
 
 function ContactForm() {
@@ -86,7 +87,6 @@ function ContactForm() {
               </label>
             </div>
           </div>
-
           <div className="mb-2">
             <label>
               <span>Numéro de téléphone*</span>
@@ -125,8 +125,8 @@ function ContactForm() {
               />
             </label>
           </div>
-          <div className="mb-2">
-            <label>
+          <div className="mb-2 sm:flex-row flex flex-col items-center gap-2 ">
+            <label className="w-full sm:w-3/4">
               <span>Service*</span>
               <select
                 name="service"
@@ -148,6 +148,26 @@ function ContactForm() {
                 <option value="depannage">Dépannage</option>
               </select>
             </label>
+            <div className="flex items-center mb-4 gap-4 my-auto">
+              <label
+                htmlFor="default-checkbox"
+                className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300 w-full"
+              >
+                <span>Il s&apos;agit d&apos;une urgence</span>
+              </label>
+              <input
+                id="default-checkbox"
+                type="checkbox"
+                value=""
+                onChange={(event) =>
+                  setFormValues((previousValues) => ({
+                    ...previousValues,
+                    isEmergency: event.target.checked,
+                  }))
+                }
+                className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+              />
+            </div>
           </div>
           <div className="mb-2">
             <label>
@@ -167,7 +187,11 @@ function ContactForm() {
               />
             </label>
           </div>
-          <div className="flex justify-between items-center text-italic sm:flex-row flex-col">
+          <label htmlFor="fileUpload">
+            <span>Joindre une photo</span>
+            <input type="file" id="fileUpload" className="w-100" />
+          </label>
+          <div className="flex justify-between items-center text-italic sm:flex-row flex-col mt-4">
             <button type="submit" className="submit block">
               Nous contacter
             </button>
