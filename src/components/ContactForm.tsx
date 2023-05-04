@@ -187,7 +187,7 @@ function ContactForm() {
               />
             </label>
           </div>
-          <label htmlFor="fileUpload">
+          <label htmlFor="fileUpload" className="flex gap-4 items-center">
             <span>Joindre une photo</span>
             <input type="file" id="fileUpload" className="w-100" />
           </label>
