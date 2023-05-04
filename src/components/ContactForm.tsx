@@ -1,4 +1,5 @@
-import React, { FormEvent, useRef, useState } from "react";
+import React, { FormEvent, useState } from "react";
+import Toast from "light-toast";
 
 interface ContactFormValue {
   name?: string;
@@ -14,8 +15,30 @@ interface ContactFormValue {
 function ContactForm() {
   const [formValues, setFormValues] = useState<ContactFormValue>({});
 
-  const submitHandler = (event: FormEvent<HTMLFormElement>): void => {
+  const submitHandler = async (
+    event: FormEvent<HTMLFormElement>
+  ): Promise<void> => {
     event.preventDefault();
+
+    const requestOptions = {
+      method: "POST",
+      header: { "Content-Type": "application/json" },
+      body: JSON.stringify(formValues),
+    };
+
+    try {
+      // await fetch(process.env.NEXT_PUBLIC_ZAPIER_WEBHOOK_URL, requestOptions);
+      Toast.success(
+        "Votre demande a bien été prise en compte.\n Nous vous rappelerons dès que possible.",
+        2000
+      );
+    } catch (error: unknown) {
+      Toast.fail(
+        "Une erreur est survenue.\n N'hésitez pas à nous appeler pour faire suivre votre demande.",
+        2000
+      );
+      console.error("something went wrong");
+    }
     // alert(formValues);
     // setFormValues({});
   };
