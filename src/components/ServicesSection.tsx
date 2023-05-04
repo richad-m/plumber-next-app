@@ -2,11 +2,11 @@ import React from "react";
 import Separator from "./UI/Separator";
 import ServiceIcon from "./UI/ServiceIcon";
 
-function SkillSection() {
+function ServicesSection() {
   return (
     <>
       <section className="skill-section" id="service">
-        <h2 className="skill-title text-4xl teal ">Services</h2>
+        <h2 className="skill-title text-4xl teal ">Nos services</h2>
         <div className="flex skill-container w-full flex-col sm:flex-row">
           <ServiceIcon />
           <ServiceIcon />
@@ -14,9 +14,8 @@ function SkillSection() {
           <ServiceIcon />
         </div>
       </section>
-      <Separator />
     </>
   );
 }
 
-export default SkillSection;
+export default ServicesSection;

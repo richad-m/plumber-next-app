@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <Navbar isHomePage />
-      <main className="relative">
+      <main className="relative overflow-y-hidden">
         <Banner message={PHONE_NUMBER} />
       </main>
     </>

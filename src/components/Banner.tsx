@@ -5,7 +5,7 @@ const Banner = ({ message }: { message: string }) => {
   return (
     <>
       <section className="banner">
-        <div className="sm:p-5 text-white z-[2] sm:ml-[5rem] sm:mt-[5rem] flex flex-col items-center">
+        <div className="sm:p-5 text-white z-[2] sm:ml-[5rem] sm:mt-[5rem] flex flex-col items-center anim-lineup">
           <FullLogo />
           <p className="py-5 text-4xl sm:text-6xl">{message}</p>
           <div className="button-container">

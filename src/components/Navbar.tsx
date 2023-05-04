@@ -85,7 +85,7 @@ function Navbar({ isHomePage }: { isHomePage?: boolean }) {
                 }
               >
                 Plomberie
-                <FiChevronDown></FiChevronDown>
+                <FiChevronDown />
               </button>
               {shouldDisplayHoverMenu && (
                 <div>
