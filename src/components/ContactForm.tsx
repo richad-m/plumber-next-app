@@ -27,6 +27,7 @@ function ContactForm() {
     };
 
     try {
+      setFormValues({});
       // await fetch(process.env.NEXT_PUBLIC_ZAPIER_WEBHOOK_URL, requestOptions);
       Toast.success(
         "Votre demande a bien été prise en compte.\n Nous vous rappelerons dès que possible.",
@@ -56,7 +57,7 @@ function ContactForm() {
               <span>Nom*</span>
               <input
                 type="text"
-                value={formValues.name}
+                value={formValues.name || ""}
                 name="name"
                 className="w-full"
                 placeholder="Jacques Dupont"
@@ -78,7 +79,7 @@ function ContactForm() {
                   type="text"
                   name="address"
                   className="w-full"
-                  value={formValues.address}
+                  value={formValues?.address || ""}
                   placeholder="10 rue des Acacias"
                   onChange={(event) =>
                     setFormValues((previousValues) => ({
@@ -97,7 +98,7 @@ function ContactForm() {
                   type="text"
                   name="zipCode"
                   className="w-full"
-                  value={formValues.zipCode}
+                  value={formValues?.zipCode || ""}
                   placeholder="75000"
                   onChange={(event) =>
                     setFormValues((previousValues) => ({
@@ -116,7 +117,7 @@ function ContactForm() {
               <input
                 name="phone"
                 type="tel"
-                value={formValues.phoneNumber}
+                value={formValues?.phoneNumber || ""}
                 className="block w-full"
                 placeholder="06 12 34 56 78"
                 required
@@ -135,7 +136,7 @@ function ContactForm() {
               <input
                 name="email"
                 type="email"
-                value={formValues.email}
+                value={formValues?.email || ""}
                 className="block w-full"
                 placeholder="jacques@dupont.com"
                 required
@@ -153,9 +154,9 @@ function ContactForm() {
               <span>Service*</span>
               <select
                 name="service"
-                value={formValues.service}
+                value={formValues?.service || ""}
                 className={`block w-full ${
-                  !!formValues.service ? "" : "text-gray-400"
+                  !!formValues?.service ? "" : "text-gray-400"
                 }`}
                 placeholder="john.cooks@example.com"
                 required
@@ -198,7 +199,7 @@ function ContactForm() {
               <textarea
                 name="message"
                 placeholder="Décrivez le plus précisemment possible votre demande"
-                value={formValues.message}
+                value={formValues?.message || ""}
                 className="w-full"
                 rows={5}
                 onChange={(event) =>

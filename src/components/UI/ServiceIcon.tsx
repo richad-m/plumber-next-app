@@ -6,7 +6,12 @@ function ServiceIcon() {
     <div className="mt-4 w-full">
       <div className="flex-col items-center flex gap-4 m-4">
         <div className="round">
-          <Image src={logo} width={50} alt={""} className="service-icon" />
+          <Image
+            src={logo}
+            width={50}
+            alt={"icone chauffe eau"}
+            className="service-icon"
+          />
         </div>
         <div>
           <h3 className="font-bold">Nom du service</h3>

@@ -101,7 +101,7 @@ function Navbar({ isHomePage }: { isHomePage?: boolean }) {
                     </li>
                     <li className="navbar-hover-menu-item">
                       <Link
-                        href="#contact"
+                        href="/services"
                         className="flex items-center gap-2"
                         onClick={closeHoverMenu}
                       >
