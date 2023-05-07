@@ -7,8 +7,6 @@ import { FiChevronDown } from "react-icons/fi";
 function Navbar({ isHomePage }: { isHomePage?: boolean }) {
   const [isNavbarSolid, setIsNavbarSolid] = useState(!!isHomePage);
   const [shouldDisplayMobileMenu, setShouldDisplayMobileMenu] = useState(false);
-  const [shouldDisplayHoverMenu, setShouldDisplayHoverMenu] = useState(false);
-  const ref = useRef<HTMLLIElement>(null);
 
   //navbar scroll changeBackground function
   const changeBackground = () => {
@@ -27,29 +25,6 @@ function Navbar({ isHomePage }: { isHomePage?: boolean }) {
     }
   });
 
-  useEffect(() => {
-    const handler = (event: any) => {
-      if (
-        shouldDisplayHoverMenu &&
-        ref.current &&
-        !ref.current.contains(event.target)
-      ) {
-        setShouldDisplayHoverMenu(false);
-      }
-    };
-    document.addEventListener("mousedown", handler);
-    document.addEventListener("touchstart", handler);
-    return () => {
-      // Cleanup the event listener
-      document.removeEventListener("mousedown", handler);
-      document.removeEventListener("touchstart", handler);
-    };
-  }, [setShouldDisplayHoverMenu, shouldDisplayHoverMenu]);
-
-  // Function to close dropdown
-  const closeHoverMenu = () => {
-    setShouldDisplayHoverMenu(false);
-  };
   const toggleMobileNavMenu = (): void =>
     setShouldDisplayMobileMenu((previousState) => !previousState);
 
@@ -77,46 +52,8 @@ function Navbar({ isHomePage }: { isHomePage?: boolean }) {
             <li className="navbar-item my-auto">
               <Link href="/">Accueil</Link>
             </li>
-            <li className="navbar-item my-auto" ref={ref}>
-              <button
-                className="flex items-center gap-2"
-                onClick={() =>
-                  setShouldDisplayHoverMenu((previousValue) => !previousValue)
-                }
-              >
-                Plomberie
-                <FiChevronDown />
-              </button>
-              {shouldDisplayHoverMenu && (
-                <div>
-                  <ul className="absolute navbar-hover-menu">
-                    <li className="navbar-hover-menu-item">
-                      <Link
-                        href="#contact"
-                        className="flex items-center gap-2"
-                        onClick={closeHoverMenu}
-                      >
-                        Dépannage
-                      </Link>
-                    </li>
-                    <li className="navbar-hover-menu-item">
-                      <Link
-                        href="/services"
-                        className="flex items-center gap-2"
-                        onClick={closeHoverMenu}
-                      >
-                        Services
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-              )}
-            </li>
             <li className="navbar-item my-auto">
-              <Link href="#service">Conseils</Link>
-            </li>
-            <li className="navbar-item my-auto">
-              <Link href="#service">FAQ</Link>
+              <Link href="#plumber">Plomberie</Link>
             </li>
             <li className="p-4">
               <Link href="/contact" className="primary-link">
@@ -136,7 +73,6 @@ function Navbar({ isHomePage }: { isHomePage?: boolean }) {
             <span></span>
           </button>
           {/* Mobile menu */}
-
           <div
             className={`${
               shouldDisplayMobileMenu ? "flex open" : "hidden"
@@ -153,19 +89,7 @@ function Navbar({ isHomePage }: { isHomePage?: boolean }) {
                 className="p-4 text-4xl text-white"
                 onClick={toggleMobileNavMenu}
               >
-                <Link href="#service">Plomberie</Link>
-              </li>
-              <li
-                className="p-4 text-4xl text-white"
-                onClick={toggleMobileNavMenu}
-              >
-                <Link href="#service">Conseils</Link>
-              </li>
-              <li
-                className="p-4 text-4xl text-white"
-                onClick={toggleMobileNavMenu}
-              >
-                <Link href="#service">FAQ</Link>
+                <Link href="#plumber">Plomberie</Link>
               </li>
               <li
                 className="p-4 text-4xl text-white"
