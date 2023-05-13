@@ -1,8 +1,7 @@
 import Link from "next/link";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import logo from "../../assets/logo.svg";
-import { FiChevronDown } from "react-icons/fi";
 
 function Navbar({ isHomePage }: { isHomePage?: boolean }) {
   const [isNavbarSolid, setIsNavbarSolid] = useState(!!isHomePage);
@@ -55,6 +54,9 @@ function Navbar({ isHomePage }: { isHomePage?: boolean }) {
             <li className="navbar-item my-auto">
               <Link href="#plumber">Plomberie</Link>
             </li>
+            <li className="navbar-item my-auto">
+              <Link href="#tarifs">Tarifs</Link>
+            </li>
             <li className="p-4">
               <Link href="/contact" className="primary-link">
                 Demande de devis
@@ -90,6 +92,12 @@ function Navbar({ isHomePage }: { isHomePage?: boolean }) {
                 onClick={toggleMobileNavMenu}
               >
                 <Link href="#plumber">Plomberie</Link>
+              </li>
+              <li
+                className="p-4 text-4xl text-white"
+                onClick={toggleMobileNavMenu}
+              >
+                <Link href="#tarif">Tarifs</Link>
               </li>
               <li
                 className="p-4 text-4xl text-white"
