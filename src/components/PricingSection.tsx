@@ -5,12 +5,12 @@ import Separator from "./UI/Separator";
 function PricingSection() {
   return (
     <>
-      <section id="numbers">
+      <section id="pricing">
         <h2 className="skill-title text-4xl teal uppercase font-bold">
           Tarifs
         </h2>
       </section>
-      <div className="content-container flex flex-col sm:flex-row items-center justify-center py-4 space-x-5">
+      <div className="content-container flex flex-col sm:flex-row items-center justify-center py-4">
         <PricingCard
           tridentNumber={1}
           title="Intervention rapide 1H"

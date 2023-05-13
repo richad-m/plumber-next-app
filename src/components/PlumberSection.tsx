@@ -5,7 +5,7 @@ function PlumberSection() {
   return (
     <>
       <section id="numbers">
-        <h2 className="skill-title text-4xl teal uppercase font-bold">
+        <h2 className="skill-title text-4xl teal uppercase font-bold text-center">
           AC PRO Dépannage Plomberie
         </h2>
       </section>
