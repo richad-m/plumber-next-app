@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import logo from "../../assets/logo.svg";
+import newLogo from "../../assets/new-logo.svg";
 
 function Navbar({ isHomePage }: { isHomePage?: boolean }) {
   const [isNavbarSolid, setIsNavbarSolid] = useState(!!isHomePage);
@@ -37,7 +37,7 @@ function Navbar({ isHomePage }: { isHomePage?: boolean }) {
         <div className="flex m-auto justify-between items-center p-4">
           <Link href="/" id="nav-button" className="flex">
             <Image
-              src={logo}
+              src={newLogo}
               alt="Picture of the author"
               width={50}
               className="sm:w-50 w-10"
