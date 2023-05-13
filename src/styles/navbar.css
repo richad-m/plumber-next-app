@@ -20,6 +20,8 @@
 }
 
 .solid-navbar {
+  position: absolute;
+  transition: background 0.5s ease;
   top: 0;
   width: 100%;
   z-index: 10;
