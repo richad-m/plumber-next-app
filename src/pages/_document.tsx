@@ -14,6 +14,14 @@ export default function Document() {
           href="https://fonts.googleapis.com/css2?family=Caveat&display=swap"
           rel="stylesheet"
         />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap"
+          rel="stylesheet"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Tangerine&display=swap"
+          rel="stylesheet"
+        />
       </Head>
       <body>
         <Main />

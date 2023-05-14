@@ -26,3 +26,13 @@
     transform: translateY(0%);
   }
 }
+
+.company-name {
+  line-height: 1rem;
+  font-family: "Playfair Display";
+}
+
+.handwritten {
+  font-family: "Tangerine";
+  font-size: 1.4rem;
+}

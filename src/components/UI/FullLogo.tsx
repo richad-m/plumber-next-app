@@ -1,18 +1,25 @@
 import React from "react";
 import Image from "next/image";
-import logo from "../../../assets/logo.svg";
+import newLogo from "../../../assets/new-logo.svg";
 
 function FullLogo() {
   return (
-    <div className="flex gap-4 anim-lineup flex-col items-center justify-center sm:flex-row cursor-default">
-      <Image src={logo} alt="AC Pro logo" width={125} color="red" />
-      <div className="flex-col align-text-bottom justify-between text-center sm:text-left">
-        <h2 className="text-decoration sm:text-8xl text-5xl font-bold underline logo-title">
-          AC PRO
-        </h2>
-        <h2 className="text-4xl font-extra-light italic">Plomberie Paris</h2>
+    <>
+      <div>
+        <div className="flex gap-1 items-center justify-center flex-row cursor-default">
+          <Image src={newLogo} alt="AC Pro logo" width={50} color="red" />
+          <div className="flex-col align-text-bottom justify-between text-center sm:text-left">
+            <p className="company-name text-left">
+              AC <br />
+              PRO
+              <br />
+              PLOMBERIE
+            </p>
+          </div>
+        </div>
+        <p className="handwritten px-3">Dépannage d&apos;urgence</p>
       </div>
-    </div>
+    </>
   );
 }
 

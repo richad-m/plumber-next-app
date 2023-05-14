@@ -1,7 +1,6 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import Image from "next/image";
-import newLogo from "../../assets/new-logo.svg";
+import FullLogo from "./UI/FullLogo";
 
 function Navbar({ isHomePage }: { isHomePage?: boolean }) {
   const [isNavbarSolid, setIsNavbarSolid] = useState(!!isHomePage);
@@ -34,18 +33,9 @@ function Navbar({ isHomePage }: { isHomePage?: boolean }) {
           isNavbarSolid || !isHomePage ? "solid-navbar" : "navbar"
         }`}
       >
-        <div className="flex m-auto justify-between items-center p-4">
+        <div className="flex m-auto justify-between items-center p-2">
           <Link href="/" id="nav-button" className="flex">
-            <Image
-              src={newLogo}
-              alt="Picture of the author"
-              width={50}
-              className="sm:w-50 w-10"
-            />
-
-            <h1 className="font-bold sm:text-4xl navbar-title logo-title ">
-              AC PRO
-            </h1>
+            <FullLogo />
           </Link>
           <ul className="hidden sm:flex gap-9">
             <li className="navbar-item my-auto">
@@ -55,7 +45,7 @@ function Navbar({ isHomePage }: { isHomePage?: boolean }) {
               <Link href="#plumber">Plomberie</Link>
             </li>
             <li className="navbar-item my-auto">
-              <Link href="#tarifs">Tarifs</Link>
+              <Link href="#pricing">Tarifs</Link>
             </li>
             <li className="p-4">
               <Link href="/contact" className="primary-link">
@@ -97,7 +87,7 @@ function Navbar({ isHomePage }: { isHomePage?: boolean }) {
                 className="p-4 text-4xl text-white"
                 onClick={toggleMobileNavMenu}
               >
-                <Link href="#tarif">Tarifs</Link>
+                <Link href="#pricing">Tarifs</Link>
               </li>
               <li
                 className="p-4 text-4xl text-white"
