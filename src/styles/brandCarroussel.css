@@ -1,0 +1,54 @@
+.carroussel-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.carroussel-item-container {
+  display: flex;
+  gap: 1.6rem;
+}
+.carrousel-item {
+  aspect-ratio: 1/1;
+  object-fit: contain;
+}
+
+.carroussel-navigation-right {
+  display: none;
+  position: absolute;
+  bottom: 50%;
+  right: 4px;
+}
+.carroussel-navigation-left {
+  display: none;
+  position: absolute;
+  bottom: 50%;
+  right: 4px;
+}
+
+/* @keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-250px * 2));
+  }
+}
+.slider {
+  height: 100px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  width: auto;
+  border: 1px solid red;
+}
+
+.slider .slide-track {
+  animation: scroll 40s linear infinite;
+  display: flex;
+  width: calc(250px * 5);
+}
+
+.slider .slide {
+  height: 100px;
+  width: 250px;
+} */

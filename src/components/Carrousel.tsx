@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useState } from "react";
 import { RxDotFilled } from "react-icons/rx";
 import { BANNER_SLIDES_URL } from "../constants/imageUrl";
 import Button from "./UI/Button";
@@ -6,14 +6,6 @@ import Button from "./UI/Button";
 function Carrousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const isFirstImage = currentIndex === 0;
-
-  const prevSlide = () => {
-    const isFirstSlide = currentIndex === 0;
-    const newIndex = isFirstSlide
-      ? BANNER_SLIDES_URL.length - 1
-      : currentIndex - 1;
-    setCurrentIndex(newIndex);
-  };
 
   const nextSlide = useCallback(() => {
     const isLastSlide = currentIndex === BANNER_SLIDES_URL.length - 1;

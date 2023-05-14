@@ -13,6 +13,7 @@
 @import "./serviceIcon.css";
 @import "./pricingCard.css";
 @import "./carroussel.css";
+@import "./brandCarroussel.css";
 
 :root {
   --primary: #007cbe;
@@ -29,7 +30,7 @@ html {
 }
 
 section {
-  padding: 2rem 0 0 0;
+  padding: 2rem 2rem 0 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
