@@ -40,7 +40,7 @@ function Carrousel() {
         <div className="sm:p-5 text-white z-[2] sm:ml-[5rem] sm:mt-[5rem] flex flex-col items-center anim-lineup">
           {isFirstImage && (
             <p className="py-5 text-4xl sm:text-6xl font-bold w-3/4 text-center banner-message">
-              Interventions d&apos;urgence <mark>fiables </mark> et{" "}
+              Interventions d&apos;urgence <mark>fiables</mark> et{" "}
               <mark>transparentes </mark>
             </p>
           )}
