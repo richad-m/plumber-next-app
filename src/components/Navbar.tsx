@@ -31,7 +31,7 @@ function Navbar({ isHomePage }: { isHomePage?: boolean }) {
       <div
         className={`w-full sm:px-10 ${
           isNavbarSolid || !isHomePage ? "solid-navbar" : "navbar"
-        }`}
+        } ${isHomePage && "absolute"}`}
       >
         <div className="flex m-auto justify-between items-center p-2">
           <Link href="/" id="nav-button" className="flex">
