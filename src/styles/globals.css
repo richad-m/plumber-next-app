@@ -19,7 +19,8 @@
   --primary: #007cbe;
   --secondary: #0e0e52;
   --danger: #a62639;
-  --teal: #b36700;
+  --teal: black;
+  /* --teal: #b36700; */
   /* --teal: #54b3d6; */
   --darkTeal: #3b7f98;
 }
@@ -50,7 +51,7 @@ body {
 }
 
 mark {
-  -webkit-animation: 1.5s highlight 1.5s 1 normal forwards;
+  /* -webkit-animation: 1.5s highlight 1.5s 1 normal forwards;
   animation: 1.5s highlight 1.5s 1 normal forwards;
   background-color: none;
   background: linear-gradient(
@@ -60,7 +61,7 @@ mark {
   );
   background-size: 200% 100%;
   background-position: 100% 0;
-  color: white;
+  color: white; */
 }
 
 @-webkit-keyframes highlight {
