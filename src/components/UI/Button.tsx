@@ -20,6 +20,14 @@ function Button({
       </a>
     );
   }
+
+  if (styleType === "whatsapp" && href) {
+    return (
+      <button type={type} className="whatsapp">
+        {text}
+      </button>
+    );
+  }
   return (
     <button type={type} className={styleType}>
       {text}

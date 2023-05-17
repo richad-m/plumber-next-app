@@ -1,9 +1,11 @@
 import { PHONE_NUMBER } from "../constants/phoneNumber";
 import ContactForm from "./ContactForm";
+import Button from "./UI/Button";
 
 function ContactSection() {
   return (
     <section className="skill-section py-5" id="contact">
+      <Button styleType="whatsapp" text="ICI"></Button>
       <h2 className="skill-title text-4xl teal uppercase font-bold ">
         Nous contacter
       </h2>
