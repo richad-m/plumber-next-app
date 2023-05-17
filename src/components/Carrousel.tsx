@@ -25,7 +25,7 @@ function Carrousel() {
     <>
       <div
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${BANNER_SLIDES_URL[currentIndex].url})`,
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(${BANNER_SLIDES_URL[currentIndex].url})`,
         }}
         className="carrousel-container"
       >
