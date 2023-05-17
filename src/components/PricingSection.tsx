@@ -37,7 +37,6 @@ function PricingSection() {
           />
         </div>
       </section>
-      <Separator />
     </>
   );
 }

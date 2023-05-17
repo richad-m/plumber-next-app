@@ -23,8 +23,6 @@ function PartnershipSection() {
         </div>
         <BrandCarrousel />
       </section>
-
-      <Separator />
     </>
   );
 }

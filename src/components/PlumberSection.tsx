@@ -16,7 +16,6 @@ function PlumberSection() {
           arrivée rapide sur place.
         </h3>
       </div>
-      <Separator />
     </>
   );
 }
