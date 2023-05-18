@@ -37,22 +37,25 @@ function Navbar({ isHomePage }: { isHomePage?: boolean }) {
           <Link href="/" id="nav-button" className="flex">
             <FullLogo />
           </Link>
-          <ul className="hidden sm:flex gap-9">
-            <li className="navbar-item my-auto">
-              <Link href="/">Accueil</Link>
-            </li>
-            <li className="navbar-item my-auto">
-              <Link href="#plumber">Plomberie</Link>
-            </li>
-            <li className="navbar-item my-auto">
-              <Link href="#pricing">Tarifs</Link>
-            </li>
-            <li className="p-4">
-              <Link href="/contact" className="primary-link">
-                Demande de devis
-              </Link>
-            </li>
-          </ul>
+          <div>
+            <ul className="hidden sm:flex gap-9">
+              <li className="navbar-item my-auto">
+                <Link href="/">Accueil</Link>
+              </li>
+              <li className="navbar-item my-auto">
+                <Link href="#plumber">Plomberie</Link>
+              </li>
+              <li className="navbar-item my-auto">
+                <Link href="#pricing">Tarifs</Link>
+              </li>
+              <li className="p-4">
+                <Link href="/contact" className="primary-link">
+                  Nous contacter
+                </Link>
+              </li>
+            </ul>
+          </div>
+
           {/* Mobile button */}
           <button
             className={`sm:hidden block hamburger ${

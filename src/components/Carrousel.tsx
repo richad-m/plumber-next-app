@@ -47,13 +47,10 @@ function Carrousel() {
               as="a"
               href="/contact"
             />
-            <Button
-              text="Nous contacter"
-              styleType="primary"
-              as="a"
-              href="/contact"
-            />
           </div>
+          <p className="py-5 text-4xl sm:text-6xl font-bold w-3/4 text-center banner-message">
+            06 00 00 00 00
+          </p>
         </div>
         <div className="flex justify-center bg-transparent carrousel-navigation">
           {BANNER_SLIDES_URL.map((_slide, slideIndex) => (
