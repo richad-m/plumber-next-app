@@ -6,9 +6,7 @@ function PricingSection() {
   return (
     <>
       <section id="pricing">
-        <h2 className="skill-title text-4xl teal uppercase font-bold">
-          Tarifs
-        </h2>
+        <h2>Tarifs</h2>
         <div className="content-container flex flex-col sm:flex-row items-center justify-center py-4">
           <PricingCard
             tridentNumber={1}

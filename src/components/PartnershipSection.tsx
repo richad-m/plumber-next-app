@@ -6,9 +6,7 @@ function PartnershipSection() {
   return (
     <>
       <section id="pricing">
-        <h2 className="skill-title text-4xl teal uppercase">
-          Nos partenaires de marque
-        </h2>
+        <h2>Nos partenaires de marque</h2>
         <br />
         <div className="">
           Chez AC Pro, nous sommes conscients de l&apos;impact que peut avoir

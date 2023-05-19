@@ -7,7 +7,7 @@ function Card() {
       <div className="card-logo m-auto">
         <FaHandHoldingWater size={100} color="darkblue" />
       </div>
-      <h2 className="text-2xl card-title font-bold">Card title</h2>
+      <h2>Card title</h2>
       <div className="card-content">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique est
         ducimus doloremque nesciunt ab facilis, ut fuga consectetur odio

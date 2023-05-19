@@ -6,9 +6,7 @@ function ContactSection() {
   return (
     <section className="skill-section py-5" id="contact">
       <Button styleType="whatsapp" text="ICI"></Button>
-      <h2 className="skill-title text-4xl teal uppercase font-bold ">
-        Nous contacter
-      </h2>
+      <h2>Nous contacter</h2>
       <p className="m-5">N&apos;hésitez pas nous appeler au {PHONE_NUMBER}</p>
       <ContactForm />
     </section>
