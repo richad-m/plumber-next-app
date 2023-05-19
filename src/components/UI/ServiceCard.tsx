@@ -1,13 +1,12 @@
-import React, { lazy } from "react";
-import Image from "next/image";
-import PipeIcon from "../../../assets/PipeIcon";
+import React from "react";
+import dynamic from "next/dynamic";
 
 function ServiceCard({ icon, subtitle }: { icon: string; subtitle: string }) {
-  const IconComponent = lazy(() => import(`../../../assets/${icon}.tsx`));
+  const IconComponent = dynamic(() => import(`../../../assets/${icon}.tsx`));
   return (
     <div className="service-card-container">
       <IconComponent />
-      <h3 className="text-center text-lg uppercase">{subtitle}</h3>
+      <h3>{subtitle}</h3>
     </div>
   );
 }
