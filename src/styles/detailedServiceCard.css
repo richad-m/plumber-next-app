@@ -1,0 +1,32 @@
+.detailed-service-card-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media screen and (min-width: 780px) {
+    width: 50%;
+  }
+}
+
+.detailed-service-card-container > p {
+  text-align: center;
+  width: 75%;
+}
+.detailed-service-cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+
+  @media screen and (min-width: 780px) {
+    flex-direction: row;
+  }
+}
+
+.detailed-service-cards-content-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+}

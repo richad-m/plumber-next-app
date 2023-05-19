@@ -5,11 +5,11 @@ function ServiceSection() {
   return (
     <section id="services" className="border-none">
       <div className="service-cards-container">
-        <ServiceCard icon={"ToiletIcon"} subtitle="chauffe-eau" />
         <ServiceCard icon={"WaterHeaterIcon"} subtitle="chauffe-eau" />
-        <ServiceCard icon={"FaucetIcon"} subtitle="chauffe-eau" />
-        <ServiceCard icon={"WaterIcon"} subtitle="chauffe-eau" />
-        <ServiceCard icon={"PipeIcon"} subtitle="chauffe-eau" />
+        <ServiceCard icon={"ToiletIcon"} subtitle="réparations de toilettes" />
+        <ServiceCard icon={"FaucetIcon"} subtitle="réparations de robinets" />
+        <ServiceCard icon={"WaterIcon"} subtitle="fuites d'eau" />
+        <ServiceCard icon={"PipeIcon"} subtitle="canalisations bouchées" />
       </div>
     </section>
   );

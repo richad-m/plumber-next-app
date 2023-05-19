@@ -21,3 +21,14 @@
   color: white;
   font-weight: 700;
 }
+
+.cta-primary-button {
+  background: white;
+  color: blue;
+  border: 1px solid blue;
+}
+
+.cta-primary-button:hover {
+  background: blue;
+  color: white;
+}

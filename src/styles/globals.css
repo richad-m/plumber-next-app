@@ -11,6 +11,7 @@
 @import "./numbers.css";
 @import "./fullLogo.css";
 @import "./serviceCard.css";
+@import "./detailedServiceCard.css";
 @import "./pricingCard.css";
 @import "./carroussel.css";
 @import "./brandCarroussel.css";
@@ -32,6 +33,10 @@ html {
   background: #f5fcff;
 }
 
+body {
+  font-family: "Raleway";
+}
+
 section {
   padding: 2rem 2rem 0 2rem;
   display: flex;
@@ -40,17 +45,20 @@ section {
   border-bottom: 3px solid blue;
 }
 
-section h2 {
+section > h2 {
   font-family: "Montserrat";
   font-weight: 200;
   font-size: 2.25rem /* 36px */;
   line-height: 2.5rem /* 40px */;
   text-transform: uppercase;
   margin-top: 7rem;
+  text-align: center;
 }
 
-body {
-  font-family: "Raleway";
+h3 {
+  text-align: center;
+  font-family: "Montserrat";
+  text-transform: uppercase;
 }
 
 .teal {
