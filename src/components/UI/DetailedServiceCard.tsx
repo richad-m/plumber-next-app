@@ -10,7 +10,9 @@ function DetailedServiceCard({
   subtitle: string;
   text: string;
 }) {
-  const IconComponent = dynamic(() => import(`../../../assets/${icon}.tsx`));
+  const IconComponent = dynamic(() => import(`../../../assets/${icon}.tsx`), {
+    ssr: false,
+  });
 
   return (
     <div className="detailed-service-card-container">
