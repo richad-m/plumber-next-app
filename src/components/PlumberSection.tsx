@@ -11,7 +11,7 @@ function PlumberSection() {
           Chez AC Pro Plomberie, nous savons à quel point il est important
           d&apos;être prêt à faire face à n&apos;importe quel scénario de
           plomberie.
-        </strong>
+        </strong>{" "}
         La plomberie de votre maison est un réseau complexe de tuyaux,
         d&apos;accessoires et d&apos;appareils qui sont tous vulnérables à leurs
         propres défaillances. Pour assurer la santé continue de l&apos;ensemble

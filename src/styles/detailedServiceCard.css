@@ -9,6 +9,13 @@
   }
 }
 
+.detailed-service-cards-content-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+}
+
 .detailed-service-card-container > p {
   text-align: center;
   width: 75%;
@@ -22,11 +29,4 @@
   @media screen and (min-width: 780px) {
     flex-direction: row;
   }
-}
-
-.detailed-service-cards-content-container {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-  align-items: center;
 }

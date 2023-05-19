@@ -21,12 +21,15 @@
 .service-card-container > svg:hover {
   color: blue;
 }
+
 .service-card-container > svg {
   transition: color 0.4s;
 }
+
 .service-card-container:first-of-type {
   border-left: none;
 }
+
 .service-cards-container {
   display: flex;
   flex-direction: column;
