@@ -6,7 +6,7 @@ function PartnershipSection() {
   return (
     <>
       <section id="pricing">
-        <h2 className="skill-title text-4xl teal uppercase font-bold">
+        <h2 className="skill-title text-4xl teal uppercase">
           Nos partenaires de marque
         </h2>
         <br />

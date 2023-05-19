@@ -1,19 +1,14 @@
-.round {
-  background-color: rgba(242, 227, 230, 0.98);
-  border-radius: 100%;
-  position: relative;
-  width: 5rem;
-  aspect-ratio: 1 / 1;
-  transition: width 0.5s;
+.service-text {
 }
 
-.service-icon {
-  position: absolute;
-  bottom: 0;
-  left: 3rem;
-  transition: all 0.2s ease-in-out;
+.service-container {
+  /* border-left: 1px solid black;
+  padding: 0 0.4rem; */
 }
 
-.service-icon:hover {
-  transform: scale(1.1);
+.service-container:first-child {
+  /* border: unset; */
+}
+
+.service-section {
 }
