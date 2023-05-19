@@ -1,4 +1,5 @@
 .service-card-container {
+  transition: box-shadow 0.2s;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,10 +13,27 @@
     border-bottom: none;
   }
 }
+.service-card-container:hover {
+  box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
+  cursor: pointer;
+}
 
 .service-card-container > svg:hover {
   color: blue;
 }
+.service-card-container > svg {
+  transition: color 0.4s;
+}
 .service-card-container:first-of-type {
   border-left: none;
+}
+.service-cards-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-between;
+
+  @media screen and (min-width: 780px) {
+    flex-direction: row;
+  }
 }

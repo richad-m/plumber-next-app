@@ -1,12 +1,11 @@
 import React from "react";
 import BrandCarrousel from "./BrandCarrousel";
 import Section from "./UI/Section";
-import Separator from "./UI/Separator";
 
 function PartnershipSection() {
   return (
     <Section id="partenaires" title="Nos partenaires de marque">
-      <p>
+      <p className="text-center text-lg">
         Chez AC Pro, nous sommes conscients de l&apos;impact que peut avoir une
         plomberie défaillante sur le fonctionnement de votre appartement ou
         maison. C&apos;est pourquoi nous nous engageons à vous offrir des
