@@ -1,0 +1,17 @@
+.service-card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid blue;
+  width: 100%;
+  padding: 10px;
+
+  @media screen and (min-width: 780px) {
+    border-left: 1px solid blue;
+    border-bottom: none;
+  }
+}
+.service-card-container:first-of-type {
+  border-left: none;
+}
