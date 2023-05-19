@@ -12,6 +12,10 @@
     border-bottom: none;
   }
 }
+
+.service-card-container > svg:hover {
+  color: blue;
+}
 .service-card-container:first-of-type {
   border-left: none;
 }

@@ -11,11 +11,15 @@ function ServiceSection() {
   return (
     <section id="services" className="border-none">
       <div className="flex flex-col w-full justify-between sm:flex-row">
-        <ServiceCard icon={waterHeater} subtitle="chauffe-eau" />
-        <ServiceCard icon={toilet} subtitle="réparation de toilettes" />
+        <ServiceCard icon={"ToiletIcon"} subtitle="chauffe-eau" />
+        <ServiceCard icon={"WaterHeaterIcon"} subtitle="chauffe-eau" />
+        <ServiceCard icon={"FaucetIcon"} subtitle="chauffe-eau" />
+        <ServiceCard icon={"WaterIcon"} subtitle="chauffe-eau" />
+        <ServiceCard icon={"PipeIcon"} subtitle="chauffe-eau" />
+        {/* <ServiceCard icon={toilet} subtitle="réparation de toilettes" />
         <ServiceCard icon={faucet} subtitle="réparation de robinets" />
         <ServiceCard icon={water} subtitle="fuites d'eau" />
-        <ServiceCard icon={pipe} subtitle="canalisation bouchées" />
+        <ServiceCard icon={pipe} subtitle="canalisation bouchées" /> */}
       </div>
     </section>
   );
