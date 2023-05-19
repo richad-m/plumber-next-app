@@ -1,8 +1,8 @@
 import React from "react";
 
 function ShakingIcon({
-  width = "150px",
-  height = "150px",
+  width = "100px",
+  height = "100px",
 }: {
   width: string;
   height: string;

@@ -14,7 +14,7 @@ function DetailedServiceCard({
 
   return (
     <div className="detailed-service-card-container">
-      <IconComponent width="100px" />
+      <IconComponent />
       <h3 className="uppercase">{subtitle}</h3>
       <div
         style={{
