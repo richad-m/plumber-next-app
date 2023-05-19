@@ -1,15 +1,29 @@
 import { PHONE_NUMBER } from "../constants/phoneNumber";
 import ContactForm from "./ContactForm";
 import Button from "./UI/Button";
+import logoWhatsapp from "../../assets/whatsapp-logo.png";
+import WhatsappQrCode from "./WhatsappQrCode";
+import Section from "./UI/Section";
 
 function ContactSection() {
   return (
-    <section className="skill-section py-5" id="contact">
-      <Button styleType="whatsapp" text="ICI"></Button>
-      <h2>Nous contacter</h2>
+    <Section id="contact" title={"Nous contacter "} titleClassName="mt-0">
       <p className="m-5">N&apos;hésitez pas nous appeler au {PHONE_NUMBER}</p>
-      <ContactForm />
-    </section>
+
+      <div className="contact-container">
+        <div className="show-only-mobile">
+          <Button
+            styleType="whatsapp"
+            text="Contactez nous via WhatsApp"
+            isWhatsapp
+          />
+        </div>
+        <ContactForm />
+        <div className="show-only-desktop">
+          <WhatsappQrCode />
+        </div>
+      </div>
+    </Section>
   );
 }
 

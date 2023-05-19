@@ -4,14 +4,16 @@ function Section({
   id,
   title,
   children,
+  titleClassName,
 }: {
   id: string;
   title: string;
   children: ReactNode;
+  titleClassName?: string;
 }) {
   return (
-    <section id={id}>
-      {title && <h2>{title}</h2>}
+    <section id={id} className="mt-0">
+      {title && <h2 className={titleClassName}>{title}</h2>}
       <div
         style={{
           width: "70px",
@@ -20,7 +22,7 @@ function Section({
           margin: "24px",
         }}
       />
-      <div className="py-3">{children}</div>
+      <div className="py-3 w-full">{children}</div>
     </section>
   );
 }

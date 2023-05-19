@@ -15,6 +15,7 @@
 @import "./pricingCard.css";
 @import "./carroussel.css";
 @import "./brandCarroussel.css";
+@import "./whatsappQrCode.css";
 
 :root {
   --primary: #007cbe;
@@ -69,28 +70,15 @@ h3 {
   font-family: "Caveat";
 }
 
-mark {
-  /* -webkit-animation: 1.5s highlight 1.5s 1 normal forwards;
-  animation: 1.5s highlight 1.5s 1 normal forwards;
-  background-color: none;
-  background: linear-gradient(
-    90deg,
-    var(--teal) 50%,
-    rgba(255, 255, 255, 0) 50%
-  );
-  background-size: 200% 100%;
-  background-position: 100% 0;
-  color: white; */
-}
-
-@-webkit-keyframes highlight {
-  to {
-    background-position: 0 0;
+.show-only-mobile {
+  @media screen and (min-width: 780px) {
+    display: none;
   }
 }
 
-@keyframes highlight {
-  to {
-    background-position: 0 0;
+.show-only-desktop {
+  display: none;
+  @media screen and (min-width: 780px) {
+    display: block;
   }
 }

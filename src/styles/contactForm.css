@@ -27,3 +27,16 @@ span {
 .submit:hover {
   background-color: var(--darkTeal) !important;
 }
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+
+  @media screen and (min-width: 780px) {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+}

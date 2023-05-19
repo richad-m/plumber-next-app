@@ -1,4 +1,7 @@
 import React from "react";
+import Image from "next/image";
+import whatsappLogo from "../../../assets/whatsapp-logo.png";
+import WhatsappIcon from "../../../assets/WhatsappIcon";
 
 function Button({
   text,
@@ -6,12 +9,14 @@ function Button({
   as,
   type,
   href,
+  isWhatsapp,
 }: {
   text: string;
   styleType: string;
   as?: string;
   type?: "submit";
   href?: string;
+  isWhatsapp?: boolean;
 }) {
   if (as === "a" && href) {
     return (
@@ -29,7 +34,8 @@ function Button({
     );
   }
   return (
-    <button type={type} className={styleType}>
+    <button type={type} className={`${styleType} flex items-center gap-3`}>
+      {isWhatsapp && <WhatsappIcon />}
       {text}
     </button>
   );
