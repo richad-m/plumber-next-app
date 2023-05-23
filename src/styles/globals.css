@@ -71,15 +71,17 @@ h3 {
   font-family: "Caveat";
 }
 
-.show-only-mobile {
-  @media screen and (min-width: 780px) {
+@media screen and (min-width: 780px) {
+  .show-only-mobile {
     display: none;
   }
 }
 
 .show-only-desktop {
   display: none;
-  @media screen and (min-width: 780px) {
+}
+@media screen and (min-width: 780px) {
+  .show-only-desktop {
     display: block;
   }
 }

@@ -7,8 +7,10 @@
   border-bottom: 1px solid var(--accentColor);
   width: 100%;
   padding: 10px;
+}
 
-  @media screen and (min-width: 780px) {
+@media screen and (min-width: 780px) {
+  .service-card-container {
     border-left: 1px solid var(--accentColor);
     border-bottom: none;
   }
@@ -35,8 +37,10 @@
   flex-direction: column;
   width: 100%;
   justify-content: space-between;
+}
 
-  @media screen and (min-width: 780px) {
+@media screen and (min-width: 780px) {
+  .service-cards-container {
     flex-direction: row;
   }
 }
