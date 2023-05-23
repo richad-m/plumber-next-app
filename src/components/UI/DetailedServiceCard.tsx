@@ -1,5 +1,6 @@
 import dynamic from "next/dynamic";
 import React from "react";
+import Separator from "./Separator";
 
 function DetailedServiceCard({
   icon,
@@ -18,14 +19,7 @@ function DetailedServiceCard({
     <div className="detailed-service-card-container">
       <IconComponent />
       <h3 className="uppercase">{subtitle}</h3>
-      <div
-        style={{
-          width: "70px",
-          background: "#D9A962",
-          height: "5px",
-          margin: "24px",
-        }}
-      />
+      <Separator />
       <p>{text}</p>
     </div>
   );

@@ -1,7 +1,6 @@
 .separator {
-  border-color: var(--teal);
-  height: 3px;
-  width: auto;
-  background-color: var(--teal);
-  margin: 0 4rem;
+  width: 70px;
+  background: var(--accentColor);
+  height: 5px;
+  margin: 24px;
 }
