@@ -21,7 +21,7 @@ function DetailedServiceCard({
       <div
         style={{
           width: "70px",
-          background: "blue",
+          background: "#D9A962",
           height: "5px",
           margin: "24px",
         }}

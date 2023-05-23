@@ -26,7 +26,7 @@ function PricingCard({
             ))}
           </div>
         </div>
-        <div className="pricing-title font-bold text-center">{title}</div>
+        <div className="pricing-title font-bold text-justify">{title}</div>
         <div className="pricing">{priceMessage}</div>
       </div>
     </>

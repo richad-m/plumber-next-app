@@ -6,7 +6,7 @@ import Section from "./UI/Section";
 function PlumberSection() {
   return (
     <Section id="plomberie" title="dédié à l'excellence et au service">
-      <p className="text-center text-lg">
+      <p className="text-justify text-lg">
         <strong>
           Chez AC Pro Plomberie, nous savons à quel point il est important
           d&apos;être prêt à faire face à n&apos;importe quel scénario de

@@ -4,7 +4,7 @@ import qrcode from "../../assets/whatsapp-qr-code.png";
 
 function WhatsappQrCode() {
   return (
-    <div className="qr-code-container">
+    <div className="qr-code-container m-auto">
       <div className="qr-code-content-container">
         <h3 className="font-bold">AC Pro Plomberie</h3>
         <p className="text-center">

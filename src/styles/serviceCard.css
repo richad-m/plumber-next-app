@@ -4,12 +4,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-bottom: 1px solid blue;
+  border-bottom: 1px solid var(--accentColor);
   width: 100%;
   padding: 10px;
 
   @media screen and (min-width: 780px) {
-    border-left: 1px solid blue;
+    border-left: 1px solid var(--accentColor);
     border-bottom: none;
   }
 }
@@ -19,7 +19,7 @@
 }
 
 .service-card-container > svg:hover {
-  color: blue;
+  color: var(--accentColor);
 }
 
 .service-card-container > svg {

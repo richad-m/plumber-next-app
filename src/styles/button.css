@@ -24,11 +24,11 @@
 
 .cta-primary-button {
   background: white;
-  color: blue;
-  border: 1px solid blue;
+  color: var(--accentColor);
+  border: 1px solid var(--accentColor);
 }
 
 .cta-primary-button:hover {
-  background: blue;
+  background: var(--accentColor);
   color: white;
 }
