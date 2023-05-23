@@ -24,32 +24,32 @@ function PlumberSection() {
         <div className="detailed-service-cards-container">
           <DetailedServiceCard
             icon={"HouseIcon"}
-            subtitle={"take care of your home"}
+            subtitle={"Nous prenons soin de votre logement"}
             text={
-              "Your home will be left as clean, if not cleaner, as when we arrived."
+              "Votre domicile sera laissé aussi propre, voire plus propre, qu'à notre arrivée."
             }
           />
           <DetailedServiceCard
-            icon={"ReviewIcon"}
-            subtitle={"five star service"}
+            icon={"ShieldIcon"}
+            subtitle={"Réactivité et disponibilité"}
             text={
-              "We aim for a five-star experience every time. We work hard to provide helpful, convenient, and high-quality service to every client."
+              "Nous répondons rapidement à vos besoins avec des plombiers disponibles à tout moment. Faites confiance à notre expertise et à notre capacité de conseil pour des solutions de plomberie optimales et personnalisées."
             }
           />
         </div>
         <div className="detailed-service-cards-container">
           <DetailedServiceCard
-            icon={"ShieldIcon"}
-            subtitle={"trusted advisors"}
+            icon={"ShakingIcon"}
+            subtitle={"Expertise et capacité de conseil"}
             text={
-              "You can rely on us for expert plumbing solutions, fair pricing, and referrals to quality contractors, electricians, and more."
+              "Nous nous engageons à vous offrir une expérience sans stress ni mauvaises surprises pendant les travaux. Nous veillons à une communication ouverte, une planification minutieuse et une exécution soignée, pour que chaque étape se déroule en toute transparence. Soyez rassuré ;) "
             }
           />
           <DetailedServiceCard
-            icon={"ShakingIcon"}
-            subtitle={"experienced and professional"}
+            icon={"ReviewIcon"}
+            subtitle={"Certification / qualification"}
             text={
-              "Our Journeymen Plumbers have years of extensive plumbing knowledge and intricate, hands-on training."
+              "Nos plombiers sont certifiés et qualifiés, démontrant notre engagement envers l'excellence. Faites confiance à notre savoir-faire professionnel pour des interventions de plomberie conformes aux normes les plus strictes."
             }
           />
         </div>
