@@ -42,7 +42,7 @@ function PlumberSection() {
             icon={"ShakingIcon"}
             subtitle={"Expertise et capacité de conseil"}
             text={
-              "Nous nous engageons à vous offrir une expérience sans stress ni mauvaises surprises pendant les travaux. Nous veillons à une communication ouverte, une planification minutieuse et une exécution soignée, pour que chaque étape se déroule en toute transparence. Soyez rassuré ;) "
+              "Nous nous engageons à vous offrir une expérience sans stress ni mauvaises surprises pendant les travaux. Nous veillons à une communication ouverte, une planification minutieuse et une exécution soignée, pour que chaque étape se déroule en toute transparence. Soyez rassurés ;) "
             }
           />
           <DetailedServiceCard

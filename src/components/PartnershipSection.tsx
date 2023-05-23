@@ -5,7 +5,7 @@ import Section from "./UI/Section";
 function PartnershipSection() {
   return (
     <Section id="partenaires" title="Nos partenaires de marque">
-      <p className="text-center text-lg">
+      <p className="text-justify text-lg">
         Chez AC Pro, nous sommes conscients de l&apos;impact que peut avoir une
         plomberie défaillante sur le fonctionnement de votre appartement ou
         maison. C&apos;est pourquoi nous nous engageons à vous offrir des
