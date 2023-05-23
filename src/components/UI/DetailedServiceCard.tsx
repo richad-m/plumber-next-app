@@ -20,7 +20,7 @@ function DetailedServiceCard({
       <IconComponent />
       <h3 className="uppercase">{subtitle}</h3>
       <Separator />
-      <p>{text}</p>
+      <p className="detailed-service-description">{text}</p>
     </div>
   );
 }

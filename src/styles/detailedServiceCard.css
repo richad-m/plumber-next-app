@@ -17,7 +17,7 @@
 }
 
 .detailed-service-card-container > p {
-  text-align: center;
+  text-align: justify;
   width: 75%;
 }
 .detailed-service-cards-container {
@@ -31,4 +31,8 @@
   .detailed-service-cards-container {
     flex-direction: row;
   }
+}
+
+.detailed-service-description {
+  min-height: 170px;
 }
