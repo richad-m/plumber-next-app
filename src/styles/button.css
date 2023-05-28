@@ -20,6 +20,8 @@
   min-width: 5rem;
   color: white;
   font-weight: 700;
+  justify-content: center;
+  width: 100%;
 }
 
 .cta-primary-button {

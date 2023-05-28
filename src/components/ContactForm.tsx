@@ -45,7 +45,7 @@ function ContactForm() {
   };
 
   return (
-    <div className="rounded-xl bg-white shadow-xl overflow-hidden grow">
+    <div className="rounded-xl bg-white shadow-xl overflow-hidden gro w-full">
       <div className="form-header flex flex-col font-bold sm:items-center text-white">
         <h2>Contactez-nous pour prendre rendez-vous</h2>
         <p>Nous vous rappelons dans l&apos;heure !</p>

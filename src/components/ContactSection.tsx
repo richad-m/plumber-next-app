@@ -9,7 +9,7 @@ function ContactSection() {
   return (
     <Section id="contact" title={"Nous contacter "} titleClassName="mt-0">
       <div className="contact-container">
-        <div className="show-only-mobile">
+        <div className="show-only-mobile w-full">
           <Button
             styleType="whatsapp"
             text="Contactez nous via WhatsApp"
@@ -26,7 +26,9 @@ function ContactSection() {
           </p>
           <WhatsappQrCode />
         </div>
-        <ContactForm />
+        <div className="sm:w-4/5 w-full">
+          <ContactForm />
+        </div>
       </div>
     </Section>
   );

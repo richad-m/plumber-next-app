@@ -1,7 +1,6 @@
 import React from "react";
-import Image from "next/image";
-import whatsappLogo from "../../../assets/whatsapp-logo.png";
 import WhatsappIcon from "../../../assets/WhatsappIcon";
+import { PHONE_NUMBER } from "../../constants/phoneNumber";
 
 function Button({
   text,
@@ -28,9 +27,13 @@ function Button({
 
   if (styleType === "whatsapp" && href) {
     return (
-      <button type={type} className="whatsapp">
+      <a
+        type={type}
+        className="whatsapp"
+        href={`https://wa.me/${PHONE_NUMBER}`}
+      >
         {text}
-      </button>
+      </a>
     );
   }
   return (

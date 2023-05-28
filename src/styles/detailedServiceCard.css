@@ -33,6 +33,9 @@
   }
 }
 
-.detailed-service-description {
-  min-height: 170px;
+@media screen and (min-width: 780px) {
+  .detailed-service-description {
+    min-height: 170px;
+    flex-direction: row;
+  }
 }
