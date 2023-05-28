@@ -6,6 +6,12 @@ import aristonLogo from "../../assets/ariston-logo.png";
 import groheLogo from "../../assets/grohe-logo.svg";
 import geberitLogo from "../../assets/geberit-logo.png";
 import altechLogo from "../../assets/altech-logo.png";
+import alternaLogo from "../../assets/alterna-logo.png";
+import compapLogo from "../../assets/comap-logo.png";
+import hansgroheLogo from "../../assets/hansgrohe-logo.png";
+import nicollLogo from "../../assets/nicoll-logo.svg";
+import porcherLogo from "../../assets/porcher-logo.png";
+import wattsLogo from "../../assets/watts-logo.png";
 import { BsChevronRight, BsChevronLeft } from "react-icons/bs";
 
 function BrandCarrousel() {
@@ -51,6 +57,42 @@ function BrandCarrousel() {
         />
         <Image
           src={altechLogo}
+          alt="AC Pro logo"
+          width={150}
+          className="carrousel-item"
+        />
+        <Image
+          src={alternaLogo}
+          alt="AC Pro logo"
+          width={150}
+          className="carrousel-item"
+        />
+        <Image
+          src={compapLogo}
+          alt="AC Pro logo"
+          width={150}
+          className="carrousel-item"
+        />
+        <Image
+          src={hansgroheLogo}
+          alt="AC Pro logo"
+          width={150}
+          className="carrousel-item"
+        />
+        <Image
+          src={nicollLogo}
+          alt="AC Pro logo"
+          width={150}
+          className="carrousel-item"
+        />
+        <Image
+          src={porcherLogo}
+          alt="AC Pro logo"
+          width={150}
+          className="carrousel-item"
+        />
+        <Image
+          src={wattsLogo}
           alt="AC Pro logo"
           width={150}
           className="carrousel-item"
