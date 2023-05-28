@@ -1,5 +1,5 @@
 import React from "react";
-import BrandCarrousel from "./BrandCarrousel";
+import LogoSlider from "./LogoSlider";
 import Section from "./UI/Section";
 
 function PartnershipSection() {
@@ -15,7 +15,7 @@ function PartnershipSection() {
         notre équipe de professionnels est à votre disposition pour vous aider à
         résoudre tous vos problèmes de plomberie de manière rapide et efficace.
       </p>
-      <BrandCarrousel />
+      <LogoSlider />
     </Section>
   );
 }
