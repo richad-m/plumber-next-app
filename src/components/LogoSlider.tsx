@@ -19,13 +19,19 @@ const LogoSlider = () => {
 
   const scrollLeft = () => {
     if (sliderRef.current) {
-      sliderRef.current.scrollLeft -= 200; // Adjust the scroll distance as needed
+      sliderRef.current.scrollTo({
+        left: sliderRef.current.scrollLeft - 125,
+        behavior: "smooth",
+      });
     }
   };
 
   const scrollRight = () => {
     if (sliderRef.current) {
-      sliderRef.current.scrollLeft += 200; // Adjust the scroll distance as needed
+      sliderRef.current.scrollTo({
+        left: sliderRef.current.scrollLeft + 125,
+        behavior: "smooth",
+      });
     }
   };
 
@@ -54,7 +60,7 @@ const LogoSlider = () => {
             width={100}
             height={100}
             key={index}
-            className="carrousel-item"
+            className="slider-item"
           />
         ))}
       </div>

@@ -1,0 +1,15 @@
+.slider-item {
+  aspect-ratio: 1/1;
+  object-fit: contain;
+}
+
+.logo-slider {
+  overflow-x: auto;
+}
+
+.logo-slider img {
+  flex-shrink: 0;
+  width: auto;
+  height: 3rem; /* Adjust the height as needed */
+  margin: 0 0.5rem; /* Adjust the margin as needed */
+}
