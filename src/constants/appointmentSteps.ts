@@ -7,6 +7,12 @@ export const NEXT_STEPS: Partial<Record<AppointmentSteps, AppointmentSteps>> = {
   [AppointmentSteps.QUALIFICATION_1]: AppointmentSteps.QUALIFICATION_2,
 };
 
+export const PREVIOUS_STEPS: Partial<
+  Record<AppointmentSteps, AppointmentSteps>
+> = {
+  [AppointmentSteps.QUALIFICATION_2]: AppointmentSteps.QUALIFICATION_1,
+};
+
 export enum FirstStepOptions {
   CHAUFFE_EAU = "Chauffe-eau",
   ROBINETS = "Réparation de robinets",

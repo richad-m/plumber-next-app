@@ -17,7 +17,6 @@ export default function Home() {
         <PlumberSection openAppointmentModal={() => setIsModalOpen(true)} />
         <PartnershipSection />
       </main>
-
       <AppointmentModal
         onClose={() => setIsModalOpen(false)}
         isOpen={isModalOpen}

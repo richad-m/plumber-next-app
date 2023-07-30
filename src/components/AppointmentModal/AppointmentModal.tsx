@@ -3,8 +3,9 @@ import {
   AppointmentSteps,
   FirstStepOptions,
   NEXT_STEPS,
+  PREVIOUS_STEPS,
 } from "../../constants/appointmentSteps";
-import Modal from "../UI/Modal";
+import Modal from "../UI/Modal/Modal";
 import { FirstStep } from "./FirstStep";
 import SecondStep from "./SecondStep";
 
@@ -31,12 +32,23 @@ function AppointmentModal({
     onClose();
   };
 
+  const backToPreviousStep = (): void =>
+    setCurrentStep(
+      (previousStep) =>
+        PREVIOUS_STEPS?.[previousStep] || AppointmentSteps.QUALIFICATION_1
+    );
+
   return (
     <Modal
       title="Quel est votre problème ?"
       onClose={closeAndReset}
       isOpen={isOpen}
       primaryAction={goToNextStep}
+      goBack={
+        currentStep === AppointmentSteps.QUALIFICATION_1
+          ? undefined
+          : backToPreviousStep
+      }
     >
       {currentStep === AppointmentSteps.QUALIFICATION_1 && (
         <FirstStep
