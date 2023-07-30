@@ -3,7 +3,7 @@ import {
   FirstStepOptions,
   FIRST_TO_SECOND_STEP_OPTIONS,
 } from "../../constants/appointmentSteps";
-import Button from "../UI/Button";
+import { OptionButton } from "../UI/Button.style";
 import { AppointmentModalContainer } from "./AppointmentModal.style";
 
 function SecondStep({ selectedOption }: { selectedOption?: FirstStepOptions }) {
@@ -14,12 +14,9 @@ function SecondStep({ selectedOption }: { selectedOption?: FirstStepOptions }) {
   return (
     <AppointmentModalContainer>
       {options?.map((option) => (
-        <Button
-          key={option}
-          text={option}
-          styleType={""}
-          onClick={() => null}
-        />
+        <OptionButton key={option} onClick={() => null}>
+          {option}
+        </OptionButton>
       ))}
     </AppointmentModalContainer>
   );

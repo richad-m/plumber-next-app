@@ -1,5 +1,5 @@
 import { FirstStepOptions } from "../../constants/appointmentSteps";
-import Button from "../UI/Button";
+import OptionCardButton from "../OptionCardButton/OptionCardButton";
 import { AppointmentModalContainer } from "./AppointmentModal.style";
 
 export function FirstStep({
@@ -16,10 +16,9 @@ export function FirstStep({
   return (
     <AppointmentModalContainer>
       {Object.values(FirstStepOptions).map((option) => (
-        <Button
+        <OptionCardButton
           key={option}
-          text={option}
-          styleType={""}
+          label={option}
           onClick={() => chooseOption(option)}
         />
       ))}

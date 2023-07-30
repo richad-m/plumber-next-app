@@ -1,3 +1,5 @@
+import { Icons } from "./icons";
+
 export enum AppointmentSteps {
   QUALIFICATION_1 = "qualification1",
   QUALIFICATION_2 = "qualification2,",
@@ -15,7 +17,7 @@ export const PREVIOUS_STEPS: Partial<
 
 export enum FirstStepOptions {
   CHAUFFE_EAU = "Chauffe-eau",
-  ROBINETS = "Réparation de robinets",
+  ROBINETS = "Réparations de robinets",
   TOILETTES = "Réparations de toilettes",
   FUITES = "Fuites d'eau",
   CANALISATIONS = "Canalisation bouchées",
@@ -59,4 +61,12 @@ export const FIRST_TO_SECOND_STEP_OPTIONS: Partial<
     "Baignoire / douche",
     "Autre",
   ],
+};
+
+export const LABEL_TO_ICON: Partial<Record<FirstStepOptions, Icons>> = {
+  [FirstStepOptions.CHAUFFE_EAU]: Icons.WaterHeaterIcon,
+  [FirstStepOptions.TOILETTES]: Icons.ToiletIcon,
+  [FirstStepOptions.ROBINETS]: Icons.FaucetIcon,
+  [FirstStepOptions.CANALISATIONS]: Icons.PipeIcon,
+  [FirstStepOptions.FUITES]: Icons.WaterIcon,
 };

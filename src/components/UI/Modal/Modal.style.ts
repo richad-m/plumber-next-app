@@ -24,7 +24,6 @@ export const ModalHeader = styled.div`
 
 export const ModalBodyContainer = styled.div`
   position: relative;
-  padding: 1.5rem /* 24px */;
   flex: 1 1 auto;
 `;
 
