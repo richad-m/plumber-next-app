@@ -9,6 +9,7 @@ function Button({
   type,
   href,
   isWhatsapp,
+  onClick,
 }: {
   text: string;
   styleType: string;
@@ -16,6 +17,7 @@ function Button({
   type?: "submit";
   href?: string;
   isWhatsapp?: boolean;
+  onClick?: (value?: any) => void;
 }) {
   if (as === "a" && href) {
     return (
@@ -37,7 +39,11 @@ function Button({
     );
   }
   return (
-    <button type={type} className={`${styleType} flex items-center gap-3`}>
+    <button
+      type={type}
+      className={`${styleType} flex items-center gap-3`}
+      onClick={onClick}
+    >
       {isWhatsapp && <WhatsappIcon />}
       {text}
     </button>

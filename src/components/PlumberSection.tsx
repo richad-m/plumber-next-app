@@ -3,7 +3,11 @@ import Button from "./UI/Button";
 import DetailedServiceCard from "./UI/DetailedServiceCard";
 import Section from "./UI/Section";
 
-function PlumberSection() {
+function PlumberSection({
+  openAppointmentModal,
+}: {
+  openAppointmentModal: () => void;
+}) {
   return (
     <Section id="plomberie" title="dédié à l'excellence et au service">
       <p className="text-justify text-lg">
@@ -56,8 +60,7 @@ function PlumberSection() {
         <Button
           text="Prendre rendez-vous"
           styleType="primary cta-primary-button"
-          as="a"
-          href="/contact"
+          onClick={openAppointmentModal}
         />
       </div>
     </Section>
