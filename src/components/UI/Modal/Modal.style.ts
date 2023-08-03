@@ -5,9 +5,8 @@ export const ModalContainer = styled.div`
   border-radius: 0.8rem;
   position: relative;
   flex-direction: column;
-  width: 70vh;
+  width: 50rem;
   background: white;
-  overflow: hidden;
 `;
 
 export const ModalHeader = styled.div`

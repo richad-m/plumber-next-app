@@ -12,7 +12,7 @@ function WhatsappQrCode() {
         </p>
         <Image
           src={qrcode}
-          alt="AC Pro logo"
+          alt="Les Artisans Dépanneurs logo"
           width={200}
           height={200}
           className="carrousel-item"

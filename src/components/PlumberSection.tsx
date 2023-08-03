@@ -12,9 +12,9 @@ function PlumberSection({
     <Section id="plomberie" title="dédié à l'excellence et au service">
       <p className="text-justify text-lg">
         <strong>
-          Chez AC Pro Plomberie, nous savons à quel point il est important
-          d&apos;être prêt à faire face à n&apos;importe quel scénario de
-          plomberie.
+          Chez Les Artisans Dépanneurs, nous savons à quel point il est
+          important d&apos;être prêt à faire face à n&apos;importe quel scénario
+          de plomberie.
         </strong>{" "}
         La plomberie de votre maison est un réseau complexe de tuyaux,
         d&apos;accessoires et d&apos;appareils qui sont tous vulnérables à leurs

@@ -7,13 +7,18 @@ function FullLogo() {
     <>
       <div>
         <div className="flex gap-1 items-center justify-center flex-row cursor-pointer">
-          <Image src={newLogo} alt="AC Pro logo" width={50} color="red" />
+          <Image
+            src={newLogo}
+            alt="Les Artisans Dépanneurs logo"
+            width={50}
+            color="red"
+          />
           <div className="flex-col align-text-bottom justify-between text-center sm:text-left">
             <p className="company-name text-left">
-              AC <br />
-              PRO
+              Les <br />
+              Artisans
               <br />
-              PLOMBERIE
+              Dépanneurs
             </p>
           </div>
         </div>
