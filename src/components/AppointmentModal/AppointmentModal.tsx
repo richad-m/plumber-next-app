@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import {
   AppointmentSteps,
-  FirstStepOptions,
+  FLOW,
+  FlowType,
   NEXT_STEPS,
   PREVIOUS_STEPS,
+  SecondStepsOptionsMap,
+  ThirdStepOptionsMap,
 } from "../../constants/appointmentSteps";
 import Modal from "../UI/Modal/Modal";
 import { FirstStep } from "./FirstStep";
@@ -19,7 +22,9 @@ function AppointmentModal({
   const [currentStep, setCurrentStep] = useState<AppointmentSteps>(
     AppointmentSteps.QUALIFICATION_1
   );
-  const [currentOption, setCurrentOption] = useState<FirstStepOptions>();
+  const [currentOptions, setCurrentOptions] = useState<
+    FlowType | SecondStepsOptionsMap | ThirdStepOptionsMap
+  >(FLOW);
 
   const goToNextStep = (): void =>
     setCurrentStep(
@@ -32,11 +37,13 @@ function AppointmentModal({
     onClose();
   };
 
-  const backToPreviousStep = (): void =>
+  const backToPreviousStep = (): void => {
     setCurrentStep(
       (previousStep) =>
         PREVIOUS_STEPS?.[previousStep] || AppointmentSteps.QUALIFICATION_1
     );
+    setCurrentOptions(FLOW);
+  };
 
   return (
     <Modal
@@ -52,12 +59,20 @@ function AppointmentModal({
     >
       {currentStep === AppointmentSteps.QUALIFICATION_1 && (
         <FirstStep
+          currentOptions={currentOptions}
           goToNextStep={goToNextStep}
-          setCurrentOption={setCurrentOption}
+          setCurrentOptions={setCurrentOptions}
         />
       )}
       {currentStep === AppointmentSteps.QUALIFICATION_2 && (
-        <SecondStep selectedOption={currentOption} />
+        <SecondStep
+          goToNextStep={goToNextStep}
+          currentOptions={currentOptions}
+          setCurrentOptions={setCurrentOptions}
+        />
+      )}
+      {currentStep === AppointmentSteps.DESCRIPTION && (
+        <div>Bienvenue en description</div>
       )}
     </Modal>
   );

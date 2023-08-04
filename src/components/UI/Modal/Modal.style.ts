@@ -7,6 +7,8 @@ export const ModalContainer = styled.div`
   flex-direction: column;
   width: 50rem;
   background: white;
+  height: 35rem;
+  overflow: hidden;
 `;
 
 export const ModalHeader = styled.div`

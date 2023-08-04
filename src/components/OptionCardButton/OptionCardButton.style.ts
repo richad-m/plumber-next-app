@@ -11,10 +11,6 @@ export const FirstOptionButton = styled.button`
   padding: 1.2rem;
   transition: background 0.5s;
 
-  svg {
-    transform: scale(1.3);
-  }
-
   &:hover {
     background: #d9a962;
     color: white;

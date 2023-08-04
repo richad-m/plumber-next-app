@@ -1,25 +1,38 @@
-import { FirstStepOptions } from "../../constants/appointmentSteps";
+import { Dispatch, SetStateAction } from "react";
+import {
+  FirstStepOptions,
+  FirstStepOptionsMap,
+  FLOW,
+  FlowType,
+  SecondStepsOptionsMap,
+  ThirdStepOptionsMap,
+} from "../../constants/appointmentSteps";
 import OptionCardButton from "../OptionCardButton/OptionCardButton";
 import { AppointmentModalContainer } from "./AppointmentModal.style";
 
 export function FirstStep({
   goToNextStep,
-  setCurrentOption,
+  setCurrentOptions,
+  currentOptions,
 }: {
   goToNextStep: () => void;
-  setCurrentOption: (value?: any) => void;
+  setCurrentOptions: Dispatch<
+    SetStateAction<FlowType | SecondStepsOptionsMap | ThirdStepOptionsMap>
+  >;
+  currentOptions: FlowType;
 }) {
-  const chooseOption = (option: string): void => {
-    setCurrentOption(option);
+  const chooseOption = (options: FirstStepOptionsMap): void => {
+    setCurrentOptions(options);
     goToNextStep();
   };
   return (
     <AppointmentModalContainer>
-      {Object.values(FirstStepOptions).map((option) => (
+      {Object.keys(currentOptions).map((option) => (
         <OptionCardButton
           key={option}
-          label={option}
-          onClick={() => chooseOption(option)}
+          label={option as FirstStepOptions}
+          //@ts-ignore
+          onClick={() => chooseOption(FLOW[option])}
         />
       ))}
     </AppointmentModalContainer>

@@ -1,20 +1,37 @@
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import {
-  FirstStepOptions,
-  FIRST_TO_SECOND_STEP_OPTIONS,
+  FlowType,
+  SecondStepsOptionsMap,
+  ThirdStepOptionsMap,
 } from "../../constants/appointmentSteps";
 import { OptionButton } from "../UI/Button.style";
 import { AppointmentModalContainer } from "./AppointmentModal.style";
 
-function SecondStep({ selectedOption }: { selectedOption?: FirstStepOptions }) {
-  if (!selectedOption) {
-    return null;
-  }
-  const options = FIRST_TO_SECOND_STEP_OPTIONS?.[selectedOption];
+function SecondStep({
+  setCurrentOptions,
+  goToNextStep,
+  currentOptions,
+}: {
+  setCurrentOptions: Dispatch<
+    SetStateAction<FlowType | SecondStepsOptionsMap | ThirdStepOptionsMap>
+  >;
+  goToNextStep: () => void;
+  currentOptions: Record<any, any>;
+}) {
   return (
     <AppointmentModalContainer>
-      {options?.map((option) => (
-        <OptionButton key={option} onClick={() => null}>
+      {Object.keys(currentOptions)?.map((option) => (
+        <OptionButton
+          key={option}
+          onClick={() => {
+            setCurrentOptions(
+              (previousOptions: any) => previousOptions[option]
+            );
+            if (!currentOptions[option]) {
+              goToNextStep();
+            }
+          }}
+        >
           {option}
         </OptionButton>
       ))}
