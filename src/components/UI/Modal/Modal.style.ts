@@ -9,6 +9,12 @@ export const ModalContainer = styled.div`
   background: white;
   height: 35rem;
   overflow: hidden;
+
+  @media screen and (max-width: 780px) {
+    height: 100vh;
+    width: fit-content;
+    overflow: auto;
+  }
 `;
 
 export const ModalHeader = styled.div`
@@ -26,6 +32,9 @@ export const ModalHeader = styled.div`
 export const ModalBodyContainer = styled.div`
   position: relative;
   flex: 1 1 auto;
+
+  @media screen and (max-width: 780px) {
+  }
 `;
 
 export const ModalFooterContainer = styled.div`

@@ -33,6 +33,7 @@ function AppointmentModal({
     );
 
   const closeAndReset = (): void => {
+    setCurrentOptions(FLOW);
     setCurrentStep(AppointmentSteps.QUALIFICATION_1);
     onClose();
   };
