@@ -7,8 +7,11 @@ export const FileUploadImportContainer = styled.div`
   height: 100%;
   padding: 3.4rem;
   width: 100%;
-  span {
-    color: blue;
-    text-decoration: underline;
+  transition: background-color 0.4s;
+  color: blue;
+
+  &:hover {
+    color: white;
+    background-color: blue;
   }
 `;

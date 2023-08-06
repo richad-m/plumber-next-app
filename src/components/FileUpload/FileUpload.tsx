@@ -10,7 +10,6 @@ const ACCEPTED_FILE_FORMATS = Object.values(FileTypes);
 export function FileUpload({
   acceptedFormats = ACCEPTED_FILE_FORMATS,
   uploadHandler,
-  textItems,
 }: IFileUpload) {
   const fileInputRef = useRef<HTMLInputElement | null>(null);
   const [fileUrl, setFileUrl] = useState<string>();
@@ -52,7 +51,7 @@ export function FileUpload({
         style={{ display: "none" }}
       />
       <FileUploadImportContainer>
-        <AiOutlinePlus size={"30px"} color="blue" />
+        <AiOutlinePlus size={"30px"} color="currentColor" />
       </FileUploadImportContainer>
     </button>
   );
