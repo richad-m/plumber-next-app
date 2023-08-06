@@ -5,18 +5,23 @@ import {
   ThirdStepOptionsMap,
 } from "../../constants/appointmentSteps";
 import { OptionButton } from "../UI/Button.style";
+import { AppointmentFormValues } from "./appointmentModal.interface";
 import { AppointmentModalContainer } from "./AppointmentModal.style";
 
 function SecondStep({
   setCurrentOptions,
   goToNextStep,
   currentOptions,
+  setAppointmentFormValues,
 }: {
   setCurrentOptions: Dispatch<
     SetStateAction<FlowType | SecondStepsOptionsMap | ThirdStepOptionsMap>
   >;
   goToNextStep: () => void;
   currentOptions: Record<any, any>;
+  setAppointmentFormValues: Dispatch<
+    React.SetStateAction<AppointmentFormValues>
+  >;
 }) {
   return (
     <AppointmentModalContainer>
@@ -27,6 +32,12 @@ function SecondStep({
             setCurrentOptions(
               (previousOptions: any) => previousOptions[option]
             );
+            setAppointmentFormValues((previousValues) => ({
+              ...previousValues,
+              secondAnswer: previousValues.secondAnswer
+                ? `${previousValues.secondAnswer} - ${option}`
+                : option,
+            }));
             if (!currentOptions[option]) {
               goToNextStep();
             }

@@ -1,15 +1,18 @@
-import { AnyTxtRecord } from "dns";
 import { Icons } from "./icons";
 
 export enum AppointmentSteps {
   QUALIFICATION_1 = "qualification1",
   QUALIFICATION_2 = "qualification2,",
+  IMPORT_PHOTOS = "import_photos",
   DESCRIPTION = "description",
+  CONFIRMATION = "confirmation",
 }
 
 export const NEXT_STEPS: Partial<Record<AppointmentSteps, AppointmentSteps>> = {
   [AppointmentSteps.QUALIFICATION_1]: AppointmentSteps.QUALIFICATION_2,
-  [AppointmentSteps.QUALIFICATION_2]: AppointmentSteps.DESCRIPTION,
+  [AppointmentSteps.QUALIFICATION_2]: AppointmentSteps.IMPORT_PHOTOS,
+  [AppointmentSteps.IMPORT_PHOTOS]: AppointmentSteps.DESCRIPTION,
+  [AppointmentSteps.DESCRIPTION]: AppointmentSteps.CONFIRMATION,
 };
 
 export const PREVIOUS_STEPS: Partial<

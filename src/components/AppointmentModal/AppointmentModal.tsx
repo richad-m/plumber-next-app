@@ -9,6 +9,10 @@ import {
   ThirdStepOptionsMap,
 } from "../../constants/appointmentSteps";
 import Modal from "../UI/Modal/Modal";
+import { AppointmentFormValues } from "./appointmentModal.interface";
+import ConfirmationStep from "./ConfirmationStep";
+import DescriptionStep from "./DescriptionStep";
+import FileImport from "./FileImportStep";
 import { FirstStep } from "./FirstStep";
 import SecondStep from "./SecondStep";
 
@@ -25,6 +29,9 @@ function AppointmentModal({
   const [currentOptions, setCurrentOptions] = useState<
     FlowType | SecondStepsOptionsMap | ThirdStepOptionsMap
   >(FLOW);
+
+  const [appointmentFormValues, setAppointmentFormValues] =
+    useState<AppointmentFormValues>({});
 
   const goToNextStep = (): void =>
     setCurrentStep(
@@ -63,6 +70,7 @@ function AppointmentModal({
           currentOptions={currentOptions}
           goToNextStep={goToNextStep}
           setCurrentOptions={setCurrentOptions}
+          setAppointmentFormValues={setAppointmentFormValues}
         />
       )}
       {currentStep === AppointmentSteps.QUALIFICATION_2 && (
@@ -70,10 +78,20 @@ function AppointmentModal({
           goToNextStep={goToNextStep}
           currentOptions={currentOptions}
           setCurrentOptions={setCurrentOptions}
+          setAppointmentFormValues={setAppointmentFormValues}
         />
       )}
+      {currentStep === AppointmentSteps.IMPORT_PHOTOS && (
+        <FileImport setAppointmentFormValues={setAppointmentFormValues} />
+      )}
       {currentStep === AppointmentSteps.DESCRIPTION && (
-        <div>Bienvenue en description</div>
+        <DescriptionStep
+          setAppointmentFormValues={setAppointmentFormValues}
+          appointmentFormValues={appointmentFormValues}
+        />
+      )}
+      {currentStep === AppointmentSteps.CONFIRMATION && (
+        <ConfirmationStep appointmentFormValues={appointmentFormValues} />
       )}
     </Modal>
   );
