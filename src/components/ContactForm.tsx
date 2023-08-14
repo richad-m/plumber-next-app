@@ -1,5 +1,5 @@
 import React, { FormEvent, useState } from "react";
-import { showToastSuccess } from "./UI/Toast/toast.helper";
+import { showToastError, showToastSuccess } from "./UI/Toast/toast.helper";
 
 interface ContactFormValue {
   name?: string;
@@ -34,6 +34,7 @@ function ContactForm() {
       );
     } catch (error: unknown) {
       console.error("something went wrong", error);
+      showToastError("Une erreur est survenue");
     }
     // alert(formValues);
     // setFormValues({});

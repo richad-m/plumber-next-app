@@ -16,7 +16,9 @@ import DescriptionStep from "./DescriptionStep";
 import FileImport from "./FileImportStep";
 import { FirstStep } from "./FirstStep";
 import SecondStep from "./SecondStep";
-import { showToastSuccess } from "../UI/Toast/toast.helper";
+import { showToastError, showToastSuccess } from "../UI/Toast/toast.helper";
+
+const { NEXT_PUBLIC_APP_API_URL } = process.env;
 
 function AppointmentModal({
   onClose,
@@ -60,7 +62,7 @@ function AppointmentModal({
     const formData = buildFormData(appointmentFormValues);
     setIsModalButtonDisabled(true);
     try {
-      await fetch(`https://plumber-website.vercel.app/api/contact`, {
+      await fetch(`${NEXT_PUBLIC_APP_API_URL}/contact`, {
         method: "POST",
         body: formData,
       });
@@ -70,6 +72,7 @@ function AppointmentModal({
       );
     } catch (error: unknown) {
       console.error(error);
+      showToastError("Une erreur est survenue");
     } finally {
       setIsModalButtonDisabled(false);
     }
