@@ -17,8 +17,7 @@ import FileImport from "./FileImportStep";
 import { FirstStep } from "./FirstStep";
 import SecondStep from "./SecondStep";
 import { showToastError, showToastSuccess } from "../UI/Toast/toast.helper";
-
-const { NEXT_PUBLIC_APP_API_URL } = process.env;
+import ContactStep from "./ContactStep";
 
 function AppointmentModal({
   onClose,
@@ -45,6 +44,7 @@ function AppointmentModal({
     );
 
   const closeAndReset = (): void => {
+    setAppointmentFormValues({});
     setCurrentOptions(FLOW);
     setCurrentStep(AppointmentSteps.QUALIFICATION_1);
     onClose();
@@ -62,14 +62,24 @@ function AppointmentModal({
     const formData = buildFormData(appointmentFormValues);
     setIsModalButtonDisabled(true);
     try {
-      await fetch(`${NEXT_PUBLIC_APP_API_URL}/contact`, {
-        method: "POST",
-        body: formData,
-      });
-      closeAndReset();
-      showToastSuccess(
-        "Votre demande a bien été prise en compte.\n Nous vous rappelerons dès que possible."
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_APP_API_URL}/contact`,
+        {
+          method: "POST",
+          body: formData,
+        }
       );
+
+      if (response.status === 200) {
+        closeAndReset();
+        showToastSuccess(
+          "Votre demande a bien été prise en compte.\n Nous vous rappelerons dès que possible."
+        );
+      } else {
+        throw new Error(
+          `Responded with ${response.status} and message ${response.body}`
+        );
+      }
     } catch (error: unknown) {
       console.error(error);
       showToastError("Une erreur est survenue");
@@ -117,6 +127,13 @@ function AppointmentModal({
         <DescriptionStep
           setAppointmentFormValues={setAppointmentFormValues}
           appointmentFormValues={appointmentFormValues}
+        />
+      )}
+      {currentStep === AppointmentSteps.CONTACT && (
+        <ContactStep
+          setAppointmentFormValues={setAppointmentFormValues}
+          appointmentFormValues={appointmentFormValues}
+          goToNextStep={goToNextStep}
         />
       )}
       {currentStep === AppointmentSteps.CONFIRMATION && (

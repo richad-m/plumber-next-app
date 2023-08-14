@@ -10,8 +10,13 @@ function ConfirmationStep({
 }: {
   appointmentFormValues: AppointmentFormValues;
 }) {
-  const { firstAnswer, secondAnswer, inputDescription, uploadedPhotos } =
-    appointmentFormValues;
+  const {
+    firstAnswer,
+    secondAnswer,
+    inputDescription,
+    uploadedPhotos,
+    contact,
+  } = appointmentFormValues;
 
   return (
     <ConfirmationStepContainer>
@@ -24,6 +29,11 @@ function ConfirmationStep({
       ) : (
         <div>Pas de photos ajoutées</div>
       )}
+      <StepBodyTitle>Vos informations</StepBodyTitle>
+      <p>Nom : {contact?.name}</p>
+      <p>Numéro de téléphone : {contact?.phoneNumber}</p>
+      <p>Email : {contact?.email}</p>
+      <p>Adresse : {`${contact?.address} ${contact?.zipCode}`} </p>
     </ConfirmationStepContainer>
   );
 }

@@ -3,8 +3,13 @@ import { AppointmentFormValues } from "../components/AppointmentModal/appointmen
 export const buildFormData = (
   appointmentFormValues: AppointmentFormValues
 ): FormData => {
-  const { firstAnswer, secondAnswer, inputDescription, uploadedPhotos } =
-    appointmentFormValues;
+  const {
+    firstAnswer,
+    secondAnswer,
+    inputDescription,
+    uploadedPhotos,
+    contact,
+  } = appointmentFormValues;
   const formData = new FormData();
 
   if (firstAnswer) {
@@ -15,6 +20,18 @@ export const buildFormData = (
   }
   if (inputDescription) {
     formData.append("inputDescription", inputDescription);
+  }
+  if (contact?.name) {
+    formData.append("name", contact?.name);
+  }
+  if (contact?.email) {
+    formData.append("name", contact?.email);
+  }
+  if (contact?.phoneNumber) {
+    formData.append("name", contact?.phoneNumber);
+  }
+  if (contact?.address && contact?.zipCode) {
+    formData.append("name", `${contact?.address} ${contact.zipCode}`);
   }
 
   if (uploadedPhotos && uploadedPhotos[0]) {

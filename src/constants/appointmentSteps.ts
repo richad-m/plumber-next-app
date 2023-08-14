@@ -5,6 +5,7 @@ export enum AppointmentSteps {
   QUALIFICATION_2 = "qualification2,",
   IMPORT_PHOTOS = "import_photos",
   DESCRIPTION = "description",
+  CONTACT = "contact",
   CONFIRMATION = "confirmation",
 }
 
@@ -12,13 +13,15 @@ export const NEXT_STEPS: Partial<Record<AppointmentSteps, AppointmentSteps>> = {
   [AppointmentSteps.QUALIFICATION_1]: AppointmentSteps.QUALIFICATION_2,
   [AppointmentSteps.QUALIFICATION_2]: AppointmentSteps.IMPORT_PHOTOS,
   [AppointmentSteps.IMPORT_PHOTOS]: AppointmentSteps.DESCRIPTION,
-  [AppointmentSteps.DESCRIPTION]: AppointmentSteps.CONFIRMATION,
+  [AppointmentSteps.DESCRIPTION]: AppointmentSteps.CONTACT,
+  [AppointmentSteps.CONTACT]: AppointmentSteps.CONFIRMATION,
 };
 
 export const PREVIOUS_STEPS: Partial<
   Record<AppointmentSteps, AppointmentSteps>
 > = {
   [AppointmentSteps.QUALIFICATION_2]: AppointmentSteps.QUALIFICATION_1,
+  [AppointmentSteps.CONFIRMATION]: AppointmentSteps.CONTACT,
 };
 
 export enum FirstStepOptions {

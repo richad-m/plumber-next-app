@@ -1,19 +1,9 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { File, IncomingForm } from "formidable";
+import { IncomingForm } from "formidable";
 import { Resend } from "resend";
 import { CreateEmailOptions } from "resend/build/src/emails/interfaces";
 import { getAttachmentList, getEmailBody } from "../../helper/api.helper";
-
-export interface AppointmentFormData {
-  fields: {
-    firstAnswer?: string;
-    secondAnswer?: string;
-    inputDescription?: string;
-  };
-  files: {
-    photos?: File[];
-  };
-}
+import { AppointmentFormData } from "../../interfaces/appointment.interface";
 
 export const config = {
   api: {

@@ -37,9 +37,10 @@ export function FirstStep({
           key={option}
           label={option as FirstStepOptions}
           onClick={() => {
-            setAppointmentFormValues({
+            setAppointmentFormValues((previousValues) => ({
+              ...previousValues,
               firstAnswer: option,
-            });
+            }));
             //@ts-ignore
             chooseOption(FLOW[option]);
           }}

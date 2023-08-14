@@ -4,15 +4,24 @@ import { CreateEmailOptions } from "resend/build/src/emails/interfaces";
 import { AppointmentFormData } from "../interfaces/appointment.interface";
 
 export const getEmailBody = (fields: AppointmentFormData["fields"]): string => {
-  const { firstAnswer, secondAnswer, inputDescription } = fields;
+  const {
+    firstAnswer,
+    secondAnswer,
+    inputDescription,
+    name,
+    email,
+    address,
+    phoneNumber,
+  } = fields;
 
   return `
+    <p> Nom : ${name} </p> 
+    <p> Email : ${email} </p> 
+    <p> Adresse : ${address} </p> 
+    <p> Téléphone : ${phoneNumber} </p> 
     <p> Catégorie : ${firstAnswer} </p> 
-    </br>
     <p> Sous catégorie : ${secondAnswer} </p> 
-    </br>
     <p> Description : ${inputDescription} </p> 
-    </br>
     `;
 };
 

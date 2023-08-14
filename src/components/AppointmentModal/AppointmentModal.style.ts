@@ -36,6 +36,21 @@ export const DescriptionTextArea = styled.textarea`
   outline: none;
 `;
 
+export const FormField = styled.input`
+  width: 50%;
+  background-color: white;
+  outline: none;
+
+  @media screen and (max-width: 780px) {
+    width: 100%;
+  }
+`;
+
+export const FormFieldContainer = styled.label`
+  display: flex;
+  flex-direction: column;
+`;
+
 export const DescriptionStepContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -45,7 +60,7 @@ export const DescriptionStepContainer = styled.div`
 export const ConfirmationStepContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 0.8rem;
 `;
 
 export const StepBodyTitle = styled.h3`
