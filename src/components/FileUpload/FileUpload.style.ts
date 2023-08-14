@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 export const FileUploadImportContainer = styled.div`
   background-color: white;
+  display: flex;
+  justify-content: center;
   border: 1px solid blue;
   border-radius: 8px;
   height: 100%;

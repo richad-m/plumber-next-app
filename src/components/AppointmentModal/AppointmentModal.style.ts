@@ -15,6 +15,10 @@ export const FileUploadsContainer = styled.div`
   gap: 1.2rem;
   justify-content: center;
   width: 100%;
+
+  @media screen and (max-width: 780px) {
+    flex-direction: column;
+  }
 `;
 
 export const PhonePhotoContainer = styled.div`

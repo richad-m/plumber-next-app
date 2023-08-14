@@ -7,7 +7,7 @@ export const FirstOptionButton = styled.button`
   border: 0.5px solid grey;
   border-radius: 0.8rem;
   aspect-ratio: 1/1;
-  height: 10rem;
+  height: 9rem;
   padding: 1.2rem;
   transition: background 0.5s;
 
