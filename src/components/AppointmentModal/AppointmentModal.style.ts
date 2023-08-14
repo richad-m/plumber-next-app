@@ -37,3 +37,13 @@ export const DescriptionStepContainer = styled.div`
   flex-direction: column;
   gap: 1.2rem;
 `;
+
+export const ConfirmationStepContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+`;
+
+export const StepBodyTitle = styled.h3`
+  font-weight: 700;
+`;

@@ -16,6 +16,8 @@ export default function Modal({
   isOpen,
   primaryAction,
   goBack,
+  primaryButtonText,
+  disabled = false,
 }: {
   primaryAction: (value?: any) => void;
   title: string;
@@ -23,6 +25,8 @@ export default function Modal({
   onClose: () => void;
   isOpen: boolean;
   goBack?: (value?: any) => void;
+  primaryButtonText: string;
+  disabled?: boolean;
 }) {
   return (
     <>
@@ -51,8 +55,9 @@ export default function Modal({
                   <PrimaryButton
                     type="button"
                     onClick={primaryAction || onClose}
+                    disabled={disabled}
                   >
-                    Continuer
+                    {primaryButtonText}
                   </PrimaryButton>
                 </ModalFooterContainer>
               </ModalContainer>

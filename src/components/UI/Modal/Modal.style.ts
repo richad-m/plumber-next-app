@@ -59,6 +59,10 @@ export const PrimaryButton = styled.button`
   transition-duration: 150ms;
   transition-duration: 150ms;
   margin: 0 0 0 auto;
+
+  &:disabled {
+    background: grey;
+  }
 `;
 
 export const CloseModalButton = styled.button`

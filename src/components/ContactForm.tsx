@@ -1,5 +1,5 @@
 import React, { FormEvent, useState } from "react";
-import Toast from "light-toast";
+import { showToastSuccess } from "./UI/Toast/toast.helper";
 
 interface ContactFormValue {
   name?: string;
@@ -29,16 +29,11 @@ function ContactForm() {
     try {
       setFormValues({});
       // await fetch(process.env.NEXT_PUBLIC_ZAPIER_WEBHOOK_URL, requestOptions);
-      Toast.success(
-        "Votre demande a bien été prise en compte.\n Nous vous rappelerons dès que possible.",
-        2000
+      showToastSuccess(
+        "Votre demande a bien été prise en compte.\n Nous vous rappelerons dès que possible."
       );
     } catch (error: unknown) {
-      Toast.fail(
-        "Une erreur est survenue.\n N'hésitez pas à nous appeler pour faire suivre votre demande.",
-        2000
-      );
-      console.error("something went wrong");
+      console.error("something went wrong", error);
     }
     // alert(formValues);
     // setFormValues({});

@@ -8,6 +8,7 @@ import {
   SecondStepsOptionsMap,
   ThirdStepOptionsMap,
 } from "../../constants/appointmentSteps";
+import { buildFormData } from "../../helper/formData.helper";
 import Modal from "../UI/Modal/Modal";
 import { AppointmentFormValues } from "./appointmentModal.interface";
 import ConfirmationStep from "./ConfirmationStep";
@@ -15,6 +16,7 @@ import DescriptionStep from "./DescriptionStep";
 import FileImport from "./FileImportStep";
 import { FirstStep } from "./FirstStep";
 import SecondStep from "./SecondStep";
+import { showToastSuccess } from "../UI/Toast/toast.helper";
 
 function AppointmentModal({
   onClose,
@@ -29,6 +31,7 @@ function AppointmentModal({
   const [currentOptions, setCurrentOptions] = useState<
     FlowType | SecondStepsOptionsMap | ThirdStepOptionsMap
   >(FLOW);
+  const [isModalButtonDisabled, setIsModalButtonDisabled] = useState(false);
 
   const [appointmentFormValues, setAppointmentFormValues] =
     useState<AppointmentFormValues>({});
@@ -53,17 +56,40 @@ function AppointmentModal({
     setCurrentOptions(FLOW);
   };
 
+  const sendAppointmentEmail = async (): Promise<void> => {
+    const formData = buildFormData(appointmentFormValues);
+    setIsModalButtonDisabled(true);
+    try {
+      await fetch(`${process.env.NEXT_PUBLIC_APP_API_URL}/contact`, {
+        method: "POST",
+        body: formData,
+      });
+      closeAndReset();
+      showToastSuccess(
+        "Votre demande a bien été prise en compte.\n Nous vous rappelerons dès que possible."
+      );
+    } catch (error: unknown) {
+      console.error(error);
+    } finally {
+      setIsModalButtonDisabled(false);
+    }
+  };
+
+  const isFinalStep = currentStep === AppointmentSteps.CONFIRMATION;
+
   return (
     <Modal
       title="Quel est votre problème ?"
       onClose={closeAndReset}
       isOpen={isOpen}
-      primaryAction={goToNextStep}
+      primaryAction={isFinalStep ? sendAppointmentEmail : goToNextStep}
       goBack={
         currentStep === AppointmentSteps.QUALIFICATION_1
           ? undefined
           : backToPreviousStep
       }
+      primaryButtonText={isFinalStep ? "Envoyer la demande" : "Continuer"}
+      disabled={isModalButtonDisabled}
     >
       {currentStep === AppointmentSteps.QUALIFICATION_1 && (
         <FirstStep
