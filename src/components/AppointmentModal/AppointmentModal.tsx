@@ -60,7 +60,7 @@ function AppointmentModal({
     const formData = buildFormData(appointmentFormValues);
     setIsModalButtonDisabled(true);
     try {
-      await fetch(`${process.env.NEXT_PUBLIC_APP_API_URL}/contact`, {
+      await fetch(`https://plumber-website.vercel.app/api/contact`, {
         method: "POST",
         body: formData,
       });
