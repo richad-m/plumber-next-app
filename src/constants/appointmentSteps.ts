@@ -40,6 +40,24 @@ export enum FirstStepOptions {
   AUTRES = "Autres problèmes de plomberie",
 }
 
+export const FIRST_STEP_OPTIONS_TO_TITLE: Record<FirstStepOptions, string> = {
+  [FirstStepOptions.CHAUFFE_EAU]: "Un problème avec votre chauffe-eau ?",
+  [FirstStepOptions.ROBINETS]: "Un problème avec un robinet ?",
+  [FirstStepOptions.TOILETTES]: "Un problème avec vos toilettes ?",
+  [FirstStepOptions.FUITES]: "Un problème de fuite ?",
+  [FirstStepOptions.CANALISATIONS]: "Un problème de canalisations ?",
+  [FirstStepOptions.AUTRES]: "Un problème ?",
+};
+
+export const STEP_TO_TITLE = {
+  [AppointmentSteps.QUALIFICATION_1]: "Comment pouvons-nous vous aider ?",
+  [AppointmentSteps.QUALIFICATION_2]: "Comment pouvons-nous vous aider ?",
+  [AppointmentSteps.IMPORT_PHOTOS]: `Montrez-nous !`,
+  [AppointmentSteps.DESCRIPTION]: `Dites-nous en plus`,
+  [AppointmentSteps.CONTACT]: `Comment vous contacter ?`,
+  [AppointmentSteps.CONFIRMATION]: `Votre problème en quelques mots`,
+};
+
 export enum SecondStepsOptions {
   CHAUFFE_EAU_FUIT = "Chauffe-eau qui fuit",
   PLUS_EAU_CHAUDE = "Je n'ai plus d'eau chaude",

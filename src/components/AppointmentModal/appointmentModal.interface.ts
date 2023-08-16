@@ -1,5 +1,7 @@
+import { FirstStepOptions } from "../../constants/appointmentSteps";
+
 export interface AppointmentFormValues {
-  firstAnswer?: string;
+  firstAnswer?: FirstStepOptions;
   secondAnswer?: string;
   uploadedPhotos?: FileList;
   inputDescription?: string;

@@ -19,7 +19,7 @@ import { FirstStep } from "./FirstStep";
 import SecondStep from "./SecondStep";
 import { showToastError, showToastSuccess } from "../UI/Toast/toast.helper";
 import ContactStep from "./ContactStep";
-import { getPrimaryButtonText } from "./appointmentModal.helper";
+import { getModalTitle, getPrimaryButtonText } from "./appointmentModal.helper";
 
 function AppointmentModal({
   onClose,
@@ -96,7 +96,7 @@ function AppointmentModal({
 
   return (
     <Modal
-      title="Quel est votre problème ?"
+      title={getModalTitle(currentStep, appointmentFormValues?.firstAnswer)}
       onClose={closeAndReset}
       isOpen={isOpen}
       primaryAction={isFinalStep ? sendAppointmentEmail : goToNextStep}

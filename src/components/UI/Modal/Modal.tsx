@@ -37,7 +37,7 @@ export default function Modal({
               {/*content*/}
               <ModalContainer>
                 <ModalHeader>
-                  <h3 className="text-2xl">{title}</h3>
+                  <p className="text-2xl">{title}</p>
                   <CloseModalButton onClick={onClose}>X</CloseModalButton>
                 </ModalHeader>
                 {children && (

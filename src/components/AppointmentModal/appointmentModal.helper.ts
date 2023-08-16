@@ -1,3 +1,9 @@
+import {
+  AppointmentSteps,
+  FirstStepOptions,
+  FIRST_STEP_OPTIONS_TO_TITLE,
+  STEP_TO_TITLE,
+} from "../../constants/appointmentSteps";
 import { AppointmentFormValues } from "./appointmentModal.interface";
 
 export const getPrimaryButtonText = (
@@ -31,4 +37,15 @@ export const isContactFormEmpty = (
   }
 
   return false;
+};
+
+export const getModalTitle = (
+  currentStep: AppointmentSteps,
+  firstAnswer?: FirstStepOptions
+): string => {
+  if (currentStep === AppointmentSteps.QUALIFICATION_2 && firstAnswer) {
+    return FIRST_STEP_OPTIONS_TO_TITLE?.[firstAnswer];
+  } else {
+    return STEP_TO_TITLE?.[currentStep];
+  }
 };
