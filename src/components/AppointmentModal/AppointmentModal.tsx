@@ -50,6 +50,7 @@ function AppointmentModal({
     setCurrentOptions(FLOW);
     setCurrentStep(AppointmentSteps.QUALIFICATION_1);
     onClose();
+    setIsModalButtonDisabled(false);
   };
 
   const backToPreviousStep = (): void => {
