@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   AppointmentSteps,
+  AppointmentStepsWithSubmitButton,
   FLOW,
   FlowType,
   NEXT_STEPS,
@@ -18,6 +19,7 @@ import { FirstStep } from "./FirstStep";
 import SecondStep from "./SecondStep";
 import { showToastError, showToastSuccess } from "../UI/Toast/toast.helper";
 import ContactStep from "./ContactStep";
+import { getPrimaryButtonText } from "./appointmentModal.helper";
 
 function AppointmentModal({
   onClose,
@@ -89,6 +91,8 @@ function AppointmentModal({
   };
 
   const isFinalStep = currentStep === AppointmentSteps.CONFIRMATION;
+  const shouldDisplaySubmitButton =
+    AppointmentStepsWithSubmitButton.includes(currentStep);
 
   return (
     <Modal
@@ -101,7 +105,10 @@ function AppointmentModal({
           ? undefined
           : backToPreviousStep
       }
-      primaryButtonText={isFinalStep ? "Envoyer la demande" : "Continuer"}
+      primaryButtonText={getPrimaryButtonText(
+        shouldDisplaySubmitButton,
+        isFinalStep
+      )}
       disabled={isModalButtonDisabled}
     >
       {currentStep === AppointmentSteps.QUALIFICATION_1 && (
@@ -134,6 +141,7 @@ function AppointmentModal({
           setAppointmentFormValues={setAppointmentFormValues}
           appointmentFormValues={appointmentFormValues}
           goToNextStep={goToNextStep}
+          setIsModalButtonDisabled={setIsModalButtonDisabled}
         />
       )}
       {currentStep === AppointmentSteps.CONFIRMATION && (

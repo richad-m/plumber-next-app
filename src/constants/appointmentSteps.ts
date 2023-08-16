@@ -9,6 +9,13 @@ export enum AppointmentSteps {
   CONFIRMATION = "confirmation",
 }
 
+export const AppointmentStepsWithSubmitButton = [
+  AppointmentSteps.CONTACT,
+  AppointmentSteps.DESCRIPTION,
+  AppointmentSteps.IMPORT_PHOTOS,
+  AppointmentSteps.CONFIRMATION,
+];
+
 export const NEXT_STEPS: Partial<Record<AppointmentSteps, AppointmentSteps>> = {
   [AppointmentSteps.QUALIFICATION_1]: AppointmentSteps.QUALIFICATION_2,
   [AppointmentSteps.QUALIFICATION_2]: AppointmentSteps.IMPORT_PHOTOS,

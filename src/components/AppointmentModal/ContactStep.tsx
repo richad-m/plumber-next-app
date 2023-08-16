@@ -1,4 +1,5 @@
-import { Dispatch, FormEventHandler, SetStateAction } from "react";
+import { Dispatch, FormEventHandler, SetStateAction, useEffect } from "react";
+import { isContactFormEmpty } from "./appointmentModal.helper";
 import { AppointmentFormValues } from "./appointmentModal.interface";
 import { FormFieldContainer } from "./AppointmentModal.style";
 
@@ -6,15 +7,26 @@ function ContactStep({
   setAppointmentFormValues,
   appointmentFormValues,
   goToNextStep,
+  setIsModalButtonDisabled,
 }: {
   setAppointmentFormValues: Dispatch<SetStateAction<AppointmentFormValues>>;
   appointmentFormValues: AppointmentFormValues;
   goToNextStep: () => void;
+  setIsModalButtonDisabled: Dispatch<SetStateAction<boolean>>;
 }) {
   const submitHandler: FormEventHandler = (event): void => {
     event.preventDefault();
     goToNextStep();
   };
+
+  useEffect(() => {
+    if (isContactFormEmpty(appointmentFormValues)) {
+      setIsModalButtonDisabled(true);
+    } else {
+      setIsModalButtonDisabled(false);
+    }
+  }, [appointmentFormValues, setIsModalButtonDisabled]);
+
   return (
     <div>
       <form onSubmit={submitHandler}>
@@ -100,7 +112,7 @@ function ContactStep({
             type="tel"
             value={appointmentFormValues?.contact?.email}
             name="email"
-            placeholder="06 12 34 56 78"
+            placeholder="jacques.dupont@mail.fr"
             onChange={(event) =>
               setAppointmentFormValues((previousValues) => ({
                 ...previousValues,
