@@ -58,6 +58,7 @@ function AppointmentModal({
       (previousStep) =>
         PREVIOUS_STEPS?.[previousStep] || AppointmentSteps.QUALIFICATION_1
     );
+    setIsModalButtonDisabled(false);
     setCurrentOptions(FLOW);
   };
 
