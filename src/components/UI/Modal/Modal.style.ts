@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 export const ModalContainer = styled.div`
   display: flex;
@@ -17,6 +17,15 @@ export const ModalContainer = styled.div`
   }
 `;
 
+export const slideIn = keyframes`
+  0% {
+    transform:translateX(300%);
+  }
+  100% {
+    transform:translateX(0%);
+  }
+  `;
+
 export const ModalHeader = styled.div`
   background: black;
   color: white;
@@ -27,11 +36,18 @@ export const ModalHeader = styled.div`
   border-bottom-width: 1px;
   border-style: solid;
   padding: 1.25rem /* 20px */;
+  transition: transform 300ms ease 120ms;
+
+  p {
+    margin: 0 auto;
+    animation: ${slideIn} 0.4s;
+  }
 `;
 
 export const ModalBodyContainer = styled.div`
   position: relative;
   flex: 1 1 auto;
+  animation: ${slideIn} 0.4s;
 
   @media screen and (max-width: 780px) {
   }

@@ -37,11 +37,16 @@ export default function Modal({
               {/*content*/}
               <ModalContainer>
                 <ModalHeader>
-                  <p className="text-2xl">{title}</p>
+                  <p key={title} className="text-2xl">
+                    {title}
+                  </p>
                   <CloseModalButton onClick={onClose}>X</CloseModalButton>
                 </ModalHeader>
                 {children && (
-                  <ModalBodyContainer className="relative p-6 flex-auto">
+                  <ModalBodyContainer
+                    className="relative p-6 flex-auto"
+                    key={title}
+                  >
                     {children}
                   </ModalBodyContainer>
                 )}
