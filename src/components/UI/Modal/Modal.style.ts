@@ -11,10 +11,14 @@ export const ModalContainer = styled.div`
   overflow: hidden;
 
   @media screen and (max-width: 780px) {
-    height: 100vh;
     width: 100vw;
+    height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+    height: calc(var(--vh, 1vh) * 100);
     border-radius: unset;
     overflow: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
   }
 `;
 
