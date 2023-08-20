@@ -12,7 +12,8 @@ export const ModalContainer = styled.div`
 
   @media screen and (max-width: 780px) {
     height: 100vh;
-    width: fit-content;
+    width: 100vw;
+    border-radius: unset;
     overflow: auto;
   }
 `;
