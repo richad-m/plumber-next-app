@@ -2,7 +2,7 @@ import { Icons } from "./icons";
 
 export enum AppointmentSteps {
   QUALIFICATION_1 = "qualification1",
-  QUALIFICATION_2 = "qualification2,",
+  QUALIFICATION_2 = "qualification2",
   IMPORT_PHOTOS = "import_photos",
   DESCRIPTION = "description",
   CONTACT = "contact",

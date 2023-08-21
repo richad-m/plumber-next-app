@@ -20,6 +20,7 @@ import SecondStep from "./SecondStep";
 import { showToastError, showToastSuccess } from "../UI/Toast/toast.helper";
 import ContactStep from "./ContactStep";
 import { getModalTitle, getPrimaryButtonText } from "./appointmentModal.helper";
+import BreadCrumbs from "../UI/BreadCrumbs/BreadCrumbs";
 
 function AppointmentModal({
   onClose,
@@ -112,6 +113,7 @@ function AppointmentModal({
         isFinalStep
       )}
       disabled={isModalButtonDisabled}
+      breadCrumbs={<BreadCrumbs appointmentStep={currentStep} />}
     >
       {currentStep === AppointmentSteps.QUALIFICATION_1 && (
         <FirstStep

@@ -18,6 +18,7 @@ export default function Modal({
   goBack,
   primaryButtonText,
   disabled = false,
+  breadCrumbs,
 }: {
   primaryAction: (value?: any) => void;
   title: string;
@@ -27,6 +28,7 @@ export default function Modal({
   goBack?: (value?: any) => void;
   primaryButtonText?: string;
   disabled?: boolean;
+  breadCrumbs?: ReactNode;
 }) {
   return (
     <>
@@ -37,9 +39,12 @@ export default function Modal({
               {/*content*/}
               <ModalContainer>
                 <ModalHeader>
-                  <p key={title} className="text-2xl">
-                    {title}
-                  </p>
+                  <div>
+                    <p key={title} className="text-2xl">
+                      {title}
+                    </p>
+                    {breadCrumbs}
+                  </div>
                   <CloseModalButton onClick={onClose}>X</CloseModalButton>
                 </ModalHeader>
                 {children && (

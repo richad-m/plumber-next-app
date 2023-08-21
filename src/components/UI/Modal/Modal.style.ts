@@ -32,6 +32,8 @@ export const slideIn = keyframes`
   `;
 
 export const ModalHeader = styled.div`
+  width: 100%;
+  border: 1px solid yellow;
   background: black;
   color: white;
   display: flex;
