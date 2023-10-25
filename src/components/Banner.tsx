@@ -1,11 +1,15 @@
 import Carrousel from "./Carrousel";
 
-const Banner = () => {
+function Banner({
+  openAppointmentModal,
+}: {
+  openAppointmentModal: () => void;
+}) {
   return (
     <section className="new-banner">
-      <Carrousel />
+      <Carrousel openAppointmentModal={openAppointmentModal} />
     </section>
   );
-};
+}
 
 export default Banner;

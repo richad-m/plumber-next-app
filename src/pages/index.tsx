@@ -12,7 +12,7 @@ export default function Home() {
     <>
       <Navbar isHomePage />
       <main className="relative">
-        <Banner />
+        <Banner openAppointmentModal={() => setIsModalOpen(true)} />
         <ServiceSection />
         <PlumberSection openAppointmentModal={() => setIsModalOpen(true)} />
         <PartnershipSection />

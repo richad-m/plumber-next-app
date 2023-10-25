@@ -2,24 +2,19 @@ import React, { useCallback, useState } from "react";
 import { RxDotFilled } from "react-icons/rx";
 import { BANNER_SLIDES_URL } from "../constants/imageUrl";
 import Button from "./UI/Button";
+import { PHONE_NUMBER } from "../constants/phoneNumber";
 
-function Carrousel() {
+function Carrousel({
+  openAppointmentModal,
+}: {
+  openAppointmentModal: () => void;
+}) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const isFirstImage = currentIndex === 0;
-
-  const nextSlide = useCallback(() => {
-    const isLastSlide = currentIndex === BANNER_SLIDES_URL.length - 1;
-    const newIndex = isLastSlide ? 0 : currentIndex + 1;
-    setCurrentIndex(newIndex);
-  }, [currentIndex]);
 
   const goToSlide = (slideIndex: number): void => {
     setCurrentIndex(slideIndex);
   };
-
-  // useEffect(() => {
-  //   setTimeout(() => nextSlide(), 10000);
-  // }, [currentIndex, nextSlide]);
 
   return (
     <>
@@ -47,9 +42,14 @@ function Carrousel() {
               as="a"
               href="/contact"
             />
+            <Button
+              text="Prendre rendez-vous"
+              styleType="primary"
+              onClick={openAppointmentModal}
+            />
           </div>
           <p className="py-5 text-4xl sm:text-6xl font-bold w-3/4 text-center banner-message">
-            06 00 00 00 00
+            {PHONE_NUMBER}
           </p>
         </div>
         <div className="flex justify-center bg-transparent carrousel-navigation">
