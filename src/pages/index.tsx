@@ -5,11 +5,15 @@ import PartnershipSection from "../components/PartnershipSection";
 import ServiceSection from "../components/ServiceSection";
 import { useState } from "react";
 import AppointmentModal from "../components/AppointmentModal/AppointmentModal";
+import Head from "next/head";
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <>
+      <Head>
+        <title>Artisans dépanneurs - Plomberie Paris</title>
+      </Head>
       <Navbar isHomePage />
       <main className="relative">
         <Banner openAppointmentModal={() => setIsModalOpen(true)} />
