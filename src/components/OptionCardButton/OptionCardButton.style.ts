@@ -12,8 +12,8 @@ export const FirstOptionButton = styled.button`
   transition: background 0.5s;
 
   &:hover {
-    background: #d9a962;
+    background: var(--accentColor);
     color: white;
-    border-color: #d9a962;
+    border-color: var(--accentColor);
   }
 `;

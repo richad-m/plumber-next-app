@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const OptionButton = styled.button`
-  color: #d9a962;
-  border: 1px solid #d9a962;
+  color: var(--accentColor);
+  border: 1px solid var(--accentColor);
   padding: 0.4rem;
   width: fit-content;
   border-radius: 0.8rem;
@@ -10,6 +10,6 @@ export const OptionButton = styled.button`
 
   &:hover {
     color: white;
-    background: #d9a962;
+    background: var(--accentColor);
   }
 `;

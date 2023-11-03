@@ -22,11 +22,10 @@
   --secondary: #0e0e52;
   --danger: #a62639;
   --teal: black;
-  /* --teal: #b36700; */
-  /* --teal: #54b3d6; */
   --darkTeal: #3b7f98;
   --cream: white;
   --accentColor: #d9a962;
+  --white: #ffff;
 }
 
 html {
