@@ -32,7 +32,7 @@ export function FileUpload({
       <FileUploadImportContainer>
         <Image
           src={fileUrl}
-          alt="Uploaded photo"
+          alt="photo"
           width="100"
           height="100"
           style={{ objectFit: "cover" }}

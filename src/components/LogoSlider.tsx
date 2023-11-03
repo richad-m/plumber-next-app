@@ -1,18 +1,6 @@
 import React, { useRef } from "react";
 import Image from "next/image";
-
-import atlanticLogo from "../../assets/atlantic-logo.png";
-import thermorLogo from "../../assets/thermor-logo.svg";
-import aristonLogo from "../../assets/ariston-logo.png";
-import groheLogo from "../../assets/grohe-logo.svg";
-import geberitLogo from "../../assets/geberit-logo.png";
-import altechLogo from "../../assets/altech-logo.png";
-import alternaLogo from "../../assets/alterna-logo.png";
-import compapLogo from "../../assets/comap-logo.png";
-import hansgroheLogo from "../../assets/hansgrohe-logo.png";
-import nicollLogo from "../../assets/nicoll-logo.svg";
-import porcherLogo from "../../assets/porcher-logo.png";
-import wattsLogo from "../../assets/watts-logo.png";
+import { SLIDER_LOGOS } from "../constants/sliderLogos";
 
 const LogoSlider = () => {
   const sliderRef = useRef<HTMLDivElement>(null);
@@ -35,31 +23,16 @@ const LogoSlider = () => {
     }
   };
 
-  const logos = [
-    { id: 1, src: atlanticLogo, alt: "Logo 1" },
-    { id: 2, src: thermorLogo, alt: "Logo 2" },
-    { id: 3, src: aristonLogo, alt: "Logo 2" },
-    { id: 2, src: groheLogo, alt: "Logo 2" },
-    { id: 2, src: geberitLogo, alt: "Logo 2" },
-    { id: 2, src: altechLogo, alt: "Logo 2" },
-    { id: 2, src: alternaLogo, alt: "Logo 2" },
-    { id: 2, src: compapLogo, alt: "Logo 2" },
-    { id: 2, src: hansgroheLogo, alt: "Logo 2" },
-    { id: 2, src: nicollLogo, alt: "Logo 2" },
-    { id: 2, src: porcherLogo, alt: "Logo 2" },
-    { id: 2, src: wattsLogo, alt: "Logo 2" },
-  ];
-
   return (
     <div className="relative">
       <div className="flex overflow-x-auto gap-9" ref={sliderRef}>
-        {logos.map((logo, index) => (
+        {SLIDER_LOGOS.map(({ src, alt, id }) => (
           <Image
-            src={logo.src}
-            alt={logo.alt}
+            src={src}
+            alt={alt}
             width={200}
             height={200}
-            key={index}
+            key={id}
             className="slider-item"
           />
         ))}

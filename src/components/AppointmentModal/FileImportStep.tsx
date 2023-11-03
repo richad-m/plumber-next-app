@@ -46,7 +46,7 @@ function FileImport({
     <>
       <AppointmentModalContainer>
         <PhonePhotoContainer>
-          <Image src={phonePhoto} alt={"take a photo"} width={200} />
+          <Image src={phonePhoto} alt="prendre-une-photo" width={200} />
           <p>
             Ajoutez une photo pour nous aider à répondre au mieux à votre
             problème
