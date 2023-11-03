@@ -42,12 +42,6 @@ function Navbar({ isHomePage }: { isHomePage?: boolean }) {
               <li className="navbar-item my-auto">
                 <Link href="/">Accueil</Link>
               </li>
-              <li className="navbar-item my-auto">
-                <Link href="#plumber">Plomberie</Link>
-              </li>
-              <li className="navbar-item my-auto">
-                <Link href="#pricing">Tarifs</Link>
-              </li>
               <li className="p-4">
                 <Link href="/contact" className="primary-link">
                   Nous contacter

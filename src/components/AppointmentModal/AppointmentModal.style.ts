@@ -32,13 +32,13 @@ export const PhonePhotoContainer = styled.div`
 
 export const DescriptionTextArea = styled.textarea`
   width: 100%;
-  background-color: white;
+  background-color: var(--white);
   outline: none;
 `;
 
 export const FormField = styled.input`
   width: 50%;
-  background-color: white;
+  background-color: var(--white);
   outline: none;
 
   @media screen and (max-width: 780px) {

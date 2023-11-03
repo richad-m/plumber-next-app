@@ -25,13 +25,15 @@
   --darkTeal: #3b7f98;
   --cream: white;
   --accentColor: #d9a962;
-  --white: #ffff;
+  --white: #f5f5f5;
+  --text-color: #00062e;
 }
 
 html {
   /* !important to work when clicking in nav menu */
   scroll-behavior: smooth !important;
-  background: white;
+  background: var(--white);
+  color: var(--text-color);
 }
 
 body {
