@@ -2,7 +2,13 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import FullLogo from "./UI/FullLogo";
 
-function Navbar({ isHomePage }: { isHomePage?: boolean }) {
+function Navbar({
+  isHomePage,
+  setIsModalOpen,
+}: {
+  isHomePage?: boolean;
+  setIsModalOpen: (open: boolean) => void;
+}) {
   const [isNavbarSolid, setIsNavbarSolid] = useState(!!isHomePage);
   const [shouldDisplayMobileMenu, setShouldDisplayMobileMenu] = useState(false);
 
@@ -45,6 +51,11 @@ function Navbar({ isHomePage }: { isHomePage?: boolean }) {
               <li className="navbar-item my-auto">
                 <Link href="#services">Plomberie</Link>
               </li>
+              <li className="navbar-item my-auto">
+                <Link href="" onClick={() => setIsModalOpen(true)}>
+                  Réserver
+                </Link>
+              </li>
               <li className="p-4">
                 <Link href="/contact" className="primary-link">
                   Nous contacter
@@ -83,17 +94,10 @@ function Navbar({ isHomePage }: { isHomePage?: boolean }) {
               >
                 <Link href="#service">Plomberie</Link>
               </li>
-              <li
-                className="p-4 text-4xl text-white"
-                onClick={toggleMobileNavMenu}
-              >
-                <Link href="#pricing">Tarifs</Link>
-              </li>
-              <li
-                className="p-4 text-4xl text-white"
-                onClick={toggleMobileNavMenu}
-              >
-                <Link href="/contact">Demande de devis</Link>
+              <li className="navbar-item my-auto">
+                <Link href="" onClick={() => setIsModalOpen(true)}>
+                  Réserver
+                </Link>
               </li>
             </ul>
           </div>

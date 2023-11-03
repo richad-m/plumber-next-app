@@ -15,7 +15,7 @@ export default function Home() {
       <Head>
         <title>Artisans dépanneurs - Plomberie Paris</title>
       </Head>
-      <Navbar isHomePage />
+      <Navbar isHomePage setIsModalOpen={setIsModalOpen} />
       <main className="relative">
         <Banner openAppointmentModal={() => setIsModalOpen(true)} />
         <ServiceSection />
