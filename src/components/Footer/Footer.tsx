@@ -1,7 +1,9 @@
+import Link from "next/link";
+
 export function Footer() {
   return (
     <footer>
-      <a href="/mentions">Mentions légales</a>
+      <Link href="/mentions">Mentions légales</Link>
     </footer>
   );
 }
