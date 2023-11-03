@@ -25,13 +25,19 @@ function Carrousel({
         className="carrousel-container"
       >
         <div className="sm:p-5 text-white z-[2] sm:ml-[5rem] sm:mt-[5rem] flex flex-col items-center anim-lineup">
+          <p className="py-5 text-4xl sm:text-6xl font-bold w-full text-center banner-message">
+            Les Artisans Dépanneurs
+          </p>
+          <p className="font-bold text-4xl sm:text-6xl w-full text-center banner-message">
+            Plomberie et chauffage
+          </p>
           {isFirstImage && (
-            <p className="py-5 text-4xl sm:text-6xl font-bold w-3/4 text-center banner-message">
+            <p className="py-5 w-full sm:text-2xl text-center banner-message">
               La garantie d&apos;un travail professionnel au juste prix
             </p>
           )}
           {!isFirstImage && (
-            <p className="py-5 text-4xl sm:text-6xl font-bold w-4/5 text-center banner-message">
+            <p className="py-5 text-2xl w-3/4 text-center banner-message">
               Interventions d&apos;urgence fiables et transparentes
             </p>
           )}

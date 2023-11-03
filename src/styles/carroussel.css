@@ -17,6 +17,8 @@
   bottom: 10px;
 }
 
-.banner-message {
-  line-height: 5rem !important;
+@media screen and (min-width: 780px) {
+  .banner-message {
+    line-height: 5rem;
+  }
 }
