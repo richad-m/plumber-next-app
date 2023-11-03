@@ -29,7 +29,7 @@ function Carrousel({
             Les Artisans Dépanneurs
           </p>
           <p className="font-bold text-4xl sm:text-6xl w-full text-center banner-message">
-            Plomberie et chauffage
+            Plomberie - Chauffage
           </p>
           {isFirstImage && (
             <p className="py-5 w-full sm:text-2xl text-center banner-message">
