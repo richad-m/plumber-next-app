@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useState } from "react";
 import { RxDotFilled } from "react-icons/rx";
 import { BANNER_SLIDES_URL } from "../constants/imageUrl";
 import Button from "./UI/Button";
