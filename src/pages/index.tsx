@@ -6,6 +6,7 @@ import ServiceSection from "../components/ServiceSection";
 import { useState } from "react";
 import AppointmentModal from "../components/AppointmentModal/AppointmentModal";
 import Head from "next/head";
+import { Footer } from "../components/Footer/Footer";
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -25,6 +26,7 @@ export default function Home() {
         onClose={() => setIsModalOpen(false)}
         isOpen={isModalOpen}
       />
+      <Footer />
     </>
   );
 }

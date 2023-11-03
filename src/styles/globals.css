@@ -40,6 +40,11 @@ body {
   font-family: "Raleway";
 }
 
+footer {
+  padding: 1.2rem;
+  font-size: 0.8rem;
+}
+
 section {
   padding: 2rem 2rem 0 2rem;
   display: flex;
