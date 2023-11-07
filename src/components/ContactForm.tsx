@@ -28,7 +28,6 @@ function ContactForm() {
 
     try {
       setFormValues({});
-      // await fetch(process.env.NEXT_PUBLIC_ZAPIER_WEBHOOK_URL, requestOptions);
       showToastSuccess(
         "Votre demande a bien été prise en compte.\n Nous vous rappelerons dès que possible."
       );
@@ -36,8 +35,6 @@ function ContactForm() {
       console.error("something went wrong", error);
       showToastError("Une erreur est survenue");
     }
-    // alert(formValues);
-    // setFormValues({});
   };
 
   return (
@@ -56,7 +53,6 @@ function ContactForm() {
                 value={formValues.name || ""}
                 name="name"
                 className="w-full"
-                placeholder="Jacques Dupont"
                 onChange={(event) =>
                   setFormValues((previousValues) => ({
                     ...previousValues,
@@ -76,7 +72,6 @@ function ContactForm() {
                   name="address"
                   className="w-full"
                   value={formValues?.address || ""}
-                  placeholder="10 rue des Acacias"
                   onChange={(event) =>
                     setFormValues((previousValues) => ({
                       ...previousValues,
@@ -95,7 +90,6 @@ function ContactForm() {
                   name="zipCode"
                   className="w-full"
                   value={formValues?.zipCode || ""}
-                  placeholder="75000"
                   onChange={(event) =>
                     setFormValues((previousValues) => ({
                       ...previousValues,
@@ -115,7 +109,6 @@ function ContactForm() {
                 type="tel"
                 value={formValues?.phoneNumber || ""}
                 className="block w-full"
-                placeholder="06 12 34 56 78"
                 required
                 onChange={(event) =>
                   setFormValues((previousValues) => ({
@@ -134,7 +127,6 @@ function ContactForm() {
                 type="email"
                 value={formValues?.email || ""}
                 className="block w-full"
-                placeholder="jacques@dupont.com"
                 required
                 onChange={(event) =>
                   setFormValues((previousValues) => ({
@@ -154,7 +146,6 @@ function ContactForm() {
                 className={`block w-full ${
                   !!formValues?.service ? "" : "text-gray-400"
                 }`}
-                placeholder="john.cooks@example.com"
                 required
                 onChange={(event) =>
                   setFormValues((previousValues) => ({
@@ -194,7 +185,6 @@ function ContactForm() {
               <span>Message</span>
               <textarea
                 name="message"
-                placeholder="Décrivez le plus précisemment possible votre demande"
                 value={formValues?.message || ""}
                 className="w-full"
                 rows={5}
