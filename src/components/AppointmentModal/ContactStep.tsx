@@ -36,7 +36,6 @@ function ContactStep({
             type="text"
             value={appointmentFormValues?.contact?.name}
             name="name"
-            placeholder="Jacques Dupont"
             onChange={(event) =>
               setAppointmentFormValues((previousValues) => ({
                 ...previousValues,
@@ -55,7 +54,6 @@ function ContactStep({
             type="text"
             value={appointmentFormValues?.contact?.address}
             name="address"
-            placeholder="10 rue des Acacias"
             onChange={(event) =>
               setAppointmentFormValues((previousValues) => ({
                 ...previousValues,
@@ -74,7 +72,6 @@ function ContactStep({
             type="text"
             value={appointmentFormValues?.contact?.zipCode || ""}
             name="zipCode"
-            placeholder="75000"
             onChange={(event) =>
               setAppointmentFormValues((previousValues) => ({
                 ...previousValues,
@@ -93,7 +90,6 @@ function ContactStep({
             type="tel"
             value={appointmentFormValues?.contact?.phoneNumber}
             name="phone"
-            placeholder="06 12 34 56 78"
             onChange={(event) =>
               setAppointmentFormValues((previousValues) => ({
                 ...previousValues,
@@ -112,7 +108,6 @@ function ContactStep({
             type="email"
             value={appointmentFormValues?.contact?.email}
             name="email"
-            placeholder="jacques.dupont@mail.fr"
             onChange={(event) =>
               setAppointmentFormValues((previousValues) => ({
                 ...previousValues,
