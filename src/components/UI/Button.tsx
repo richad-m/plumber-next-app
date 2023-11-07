@@ -27,13 +27,14 @@ function Button({
     );
   }
 
-  if (styleType === "whatsapp" && href) {
+  if (styleType === "whatsapp") {
     return (
       <a
         type={type}
         className="whatsapp"
         href={`https://wa.me/${WHATSAPP_PHONE_NUMBER}`}
       >
+        {isWhatsapp && <WhatsappIcon />}
         {text}
       </a>
     );

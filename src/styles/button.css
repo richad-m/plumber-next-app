@@ -14,6 +14,8 @@
 }
 
 .whatsapp {
+  display: flex;
+  gap: 0.8rem;
   background-color: #16be45;
   padding: 16px;
   border-radius: 0.4rem;
