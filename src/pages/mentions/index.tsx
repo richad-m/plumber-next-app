@@ -5,7 +5,7 @@ import { PHONE_NUMBER } from "../../constants/phoneNumber";
 export default function Home() {
   return (
     <>
-      <Navbar isHomePage={false} />
+      <Navbar isHomePage={false} setIsModalOpen={() => null} />
 
       <Section id="partenaires" title="Mentions légales">
         <div className="flex flex-col gap-3">
