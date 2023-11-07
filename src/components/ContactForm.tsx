@@ -1,7 +1,8 @@
 import React, { FormEvent, useState } from "react";
 import { showToastError, showToastSuccess } from "./UI/Toast/toast.helper";
+import { buildContactFormData } from "../helper/formData.helper";
 
-interface ContactFormValue {
+export interface ContactFormValue {
   name?: string;
   zipCode?: string;
   address?: string;
@@ -25,14 +26,30 @@ function ContactForm() {
       header: { "Content-Type": "application/json" },
       body: JSON.stringify(formValues),
     };
+    const formData = buildContactFormData(formValues);
+    console.log("formData:", formData);
 
     try {
-      setFormValues({});
-      showToastSuccess(
-        "Votre demande a bien été prise en compte.\n Nous vous rappelerons dès que possible."
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_APP_API_URL}/contact`,
+        {
+          method: "POST",
+          body: formData,
+        }
       );
+
+      if (response.status === 200) {
+        showToastSuccess(
+          "Votre demande a bien été prise en compte.\n Nous vous rappelerons dès que possible."
+        );
+        setFormValues({});
+      } else {
+        throw new Error(
+          `Responded with ${response.status} and message ${response.body}`
+        );
+      }
     } catch (error: unknown) {
-      console.error("something went wrong", error);
+      console.error(error);
       showToastError("Une erreur est survenue");
     }
   };
