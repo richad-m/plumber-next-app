@@ -34,9 +34,9 @@ export default async function handler(
   const bodyHtml = getEmailBody(data.fields);
 
   const emailSettings: CreateEmailOptions = {
-    from: "test@resend.dev",
+    from: "contact@lesartisansdepanneurs.com",
     to: NEXT_PUBLIC_CONTACT_EMAIL || "",
-    subject: "test",
+    subject: "Nouveau rendez-vous depuis le site",
     html: bodyHtml,
     attachments,
   };
