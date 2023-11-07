@@ -54,9 +54,15 @@ function Carrousel({
               onClick={openAppointmentModal}
             />
           </div>
-          <p className="py-5 text-4xl sm:text-6xl font-bold w-3/4 text-center banner-message">
+          <p className="py-5 text-4xl sm:text-6xl font-bold w-3/4 text-center banner-message show-only-desktop">
             {PHONE_NUMBER}
           </p>
+          <a
+            className="py-5 text-4xl sm:text-6xl font-bold w-3/4 text-center banner-message show-only-mobile"
+            href={`tel:${PHONE_NUMBER}`}
+          >
+            {PHONE_NUMBER}
+          </a>
         </div>
         <div className="flex justify-center bg-transparent carrousel-navigation">
           {BANNER_SLIDES_URL.map((_slide, slideIndex) => (
