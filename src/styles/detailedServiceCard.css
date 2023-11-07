@@ -18,7 +18,6 @@
 
 .detailed-service-card-container > p {
   text-align: justify;
-  width: 75%;
 }
 .detailed-service-cards-container {
   display: flex;
