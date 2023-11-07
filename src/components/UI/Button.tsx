@@ -1,6 +1,6 @@
 import React from "react";
 import WhatsappIcon from "../../../assets/WhatsappIcon";
-import { PHONE_NUMBER } from "../../constants/phoneNumber";
+import { WHATSAPP_PHONE_NUMBER } from "../../constants/phoneNumber";
 
 function Button({
   text,
@@ -32,7 +32,7 @@ function Button({
       <a
         type={type}
         className="whatsapp"
-        href={`https://wa.me/${PHONE_NUMBER}`}
+        href={`https://wa.me/${WHATSAPP_PHONE_NUMBER}`}
       >
         {text}
       </a>
