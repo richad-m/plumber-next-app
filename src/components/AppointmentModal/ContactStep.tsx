@@ -109,7 +109,7 @@ function ContactStep({
         <FormFieldContainer>
           <p>Email*</p>
           <input
-            type="tel"
+            type="email"
             value={appointmentFormValues?.contact?.email}
             name="email"
             placeholder="jacques.dupont@mail.fr"
