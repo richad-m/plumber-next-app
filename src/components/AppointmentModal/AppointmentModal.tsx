@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   AppointmentSteps,
   AppointmentStepsWithSubmitButton,
@@ -38,6 +38,15 @@ function AppointmentModal({
 
   const [appointmentFormValues, setAppointmentFormValues] =
     useState<AppointmentFormValues>({});
+
+  // prevent scrolling body when modal is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [isOpen]);
 
   const goToNextStep = (): void =>
     setCurrentStep(
