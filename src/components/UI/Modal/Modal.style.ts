@@ -12,8 +12,7 @@ export const ModalContainer = styled.div`
 
   @media screen and (max-width: 780px) {
     width: 100vw;
-    height: 100vh; /* Fallback for browsers that do not support Custom Properties */
-    height: calc(var(--vh, 1vh) * 100);
+    height: 100svh;
     border-radius: unset;
     overflow: auto;
     position: fixed;
