@@ -16,4 +16,8 @@ export const FileUploadImportContainer = styled.div`
     color: white;
     background-color: blue;
   }
+
+  @media screen and (max-width: 780px) {
+    padding: 2.4rem;
+  }
 `;

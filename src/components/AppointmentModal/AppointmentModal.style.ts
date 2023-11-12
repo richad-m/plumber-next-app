@@ -17,7 +17,8 @@ export const FileUploadsContainer = styled.div`
   width: 100%;
 
   @media screen and (max-width: 780px) {
-    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 0 auto;
   }
 `;
 
