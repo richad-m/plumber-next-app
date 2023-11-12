@@ -8,8 +8,8 @@ import alternaLogo from "../../assets/alterna-logo.png";
 import compapLogo from "../../assets/comap-logo.png";
 import hansgroheLogo from "../../assets/hansgrohe-logo.png";
 import nicollLogo from "../../assets/nicoll-logo.svg";
-import porcherLogo from "../../assets/porcher-logo.png";
-import wattsLogo from "../../assets/watts-logo.png";
+import porcherLogo from "../../assets/porcher-logo.svg";
+import wattsLogo from "../../assets/watts-logo.svg";
 
 export const SLIDER_LOGOS = [
   { id: '"atlantic-logo"', src: atlanticLogo, alt: "atlantic-logo" },
