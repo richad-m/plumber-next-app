@@ -11,7 +11,7 @@ function PartnershipSection() {
         appartement ou maison. C&apos;est pourquoi nous nous engageons à vous
         offrir des services haut de gamme, professionnels et abordables, pour
         que votre plomberie fonctionne toujours à son meilleur niveau. Que vous
-        ayez besoin d&apos;une intervention en urgence ou pour toute autre
+        ayez besoin d&apos;une intervention en urgence ou pour tout autre
         besoin, notre équipe de professionnels est à votre disposition pour vous
         aider à résoudre tous vos problèmes de plomberie de manière rapide et
         efficace.
