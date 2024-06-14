@@ -4,7 +4,7 @@ import ServiceCard from "./UI/ServiceCard";
 
 function ServiceSection() {
   return (
-    <Section id="services" title="prestation de services">
+    <Section id="services" title="prestation de services" titleClassName="mt-0">
       <div className="service-cards-container">
         <ServiceCard icon={"WaterHeaterIcon"} subtitle="chauffe-eau" />
         <ServiceCard icon={"ToiletIcon"} subtitle="réparations de toilettes" />

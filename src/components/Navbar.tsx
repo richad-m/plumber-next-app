@@ -52,14 +52,15 @@ function Navbar({
                 <Link href="#services">Plomberie</Link>
               </li>
               <li className="navbar-item my-auto">
+                <Link href="#services">Serrurerie</Link>
+              </li>
+              <li className="navbar-item my-auto">
                 <Link href="" onClick={() => setIsModalOpen(true)}>
-                  Réserver
+                  Prendre rendez-vous
                 </Link>
               </li>
-              <li className="p-4">
-                <Link href="/contact" className="primary-link">
-                  Nous contacter
-                </Link>
+              <li className="navbar-item my-auto">
+                <Link href="/contact">Nous contacter</Link>
               </li>
             </ul>
           </div>
@@ -96,7 +97,7 @@ function Navbar({
               </li>
               <li className="navbar-item my-auto">
                 <Link href="" onClick={() => setIsModalOpen(true)}>
-                  Réserver
+                  Prendre rendez-vous
                 </Link>
               </li>
             </ul>

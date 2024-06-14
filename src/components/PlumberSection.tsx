@@ -9,20 +9,11 @@ function PlumberSection({
   openAppointmentModal: () => void;
 }) {
   return (
-    <Section id="plomberie" title="dédié à l'excellence et au service">
-      <p className="text-justify text-lg">
-        <strong>
-          Chez Les Artisans Dépanneurs, nous savons à quel point il est
-          important d&apos;être prêt à faire face à n&apos;importe quel scénario
-          de plomberie.
-        </strong>{" "}
-        La plomberie de votre maison est un réseau complexe de tuyaux,
-        d&apos;accessoires et d&apos;appareils qui sont tous vulnérables à leurs
-        propres défaillances. Pour assurer la santé continue de l&apos;ensemble
-        du système de plomberie de votre maison, nous arrivons toujours avec
-        tout l&apos;équipement et les outils dont nous avons besoin pour faire
-        le travail de la bonne façon, sans improviser ni prendre de raccourcis.
-      </p>
+    <Section
+      id="plomberie"
+      title="dédié à l'excellence et au service"
+      titleClassName="mt-0"
+    >
       <br />
       <div className="detailed-service-cards-content-container">
         <div className="detailed-service-cards-container">
@@ -37,7 +28,7 @@ function PlumberSection({
             icon={"ShieldIcon"}
             subtitle={"Réactivité et disponibilité"}
             text={
-              "Nous répondons rapidement à vos besoins avec des plombiers disponibles à tout moment. Faites confiance à notre expertise et à notre capacité de conseil pour des solutions de plomberie optimales et personnalisées."
+              "Nous répondons rapidement à vos besoins avec des plombiers et serruriers disponibles à tout moment. Faites confiance à notre expertise et à notre capacité de conseil pour des solutions de plomberie optimales et personnalisées."
             }
           />
         </div>
@@ -53,16 +44,16 @@ function PlumberSection({
             icon={"ReviewIcon"}
             subtitle={"Certification / qualification"}
             text={
-              "Nos plombiers sont certifiés et qualifiés, démontrant notre engagement envers l'excellence. Faites confiance à notre savoir-faire professionnel pour des interventions de plomberie conformes aux normes les plus strictes."
+              "Nos plombiers et serruriers sont certifiés et qualifiés, démontrant notre engagement envers l'excellence. Faites confiance à notre savoir-faire professionnel pour des interventions de plomberie conformes aux normes les plus strictes."
             }
           />
         </div>
-        <Button
-          text="Prendre rendez-vous"
-          styleType="primary cta-primary-button"
-          onClick={openAppointmentModal}
-        />
       </div>
+      <Button
+        text="Prendre rendez-vous"
+        styleType="primary cta-primary-button m-auto mb-20"
+        onClick={openAppointmentModal}
+      />
     </Section>
   );
 }

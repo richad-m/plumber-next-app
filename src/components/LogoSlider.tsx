@@ -24,14 +24,14 @@ const LogoSlider = () => {
   };
 
   return (
-    <div className="relative">
+    <div className="relative mb-20">
       <div className="flex overflow-x-auto gap-9" ref={sliderRef}>
         {SLIDER_LOGOS.map(({ src, alt, id }) => (
           <Image
             src={src}
             alt={alt}
-            width={200}
-            height={200}
+            width={100}
+            height={100}
             key={id}
             className="slider-item"
           />
