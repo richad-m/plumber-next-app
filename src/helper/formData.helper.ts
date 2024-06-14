@@ -26,17 +26,19 @@ export const buildFormData = (
     formData.append("name", contact?.name);
   }
   if (contact?.email) {
-    formData.append("name", contact?.email);
+    formData.append("email", contact?.email);
   }
   if (contact?.phoneNumber) {
-    formData.append("name", contact?.phoneNumber);
+    formData.append("phoneNumber", contact?.phoneNumber);
   }
   if (contact?.address && contact?.zipCode) {
-    formData.append("name", `${contact?.address} ${contact.zipCode}`);
+    formData.append("address", `${contact?.address} ${contact.zipCode}`);
   }
 
-  if (uploadedPhotos && uploadedPhotos[0]) {
-    formData.append("photos", uploadedPhotos[0]);
+  if (uploadedPhotos?.length) {
+    for (const photo of uploadedPhotos) {
+      formData.append("photos", photo);
+    }
   }
 
   return formData;

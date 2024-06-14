@@ -19,26 +19,29 @@ export function FileUpload({
   };
 
   const onChangeHandler = (): void => {
-    const { files = [] } = fileInputRef?.current || {};
-    uploadHandler(files as FileList);
+    const { files } = fileInputRef?.current || {};
+    if (!files) {
+      return;
+    }
+    const file = Array.from(files)[0];
 
-    if (files) {
-      setFileUrl(URL.createObjectURL(files[0]));
+    uploadHandler(file);
+
+    if (file) {
+      setFileUrl(URL.createObjectURL(file));
     }
   };
 
   return fileUrl ? (
-    <div>
-      <FileUploadImportContainer>
-        <Image
-          src={fileUrl}
-          alt="photo"
-          width="100"
-          height="100"
-          style={{ objectFit: "cover" }}
-        />
-      </FileUploadImportContainer>
-    </div>
+    <FileUploadImportContainer>
+      <Image
+        src={fileUrl}
+        alt="photo"
+        width="75"
+        height="75"
+        style={{ objectFit: "cover" }}
+      />
+    </FileUploadImportContainer>
   ) : (
     <button onClick={openFilesExplorer}>
       {/* Hidden input file to open files explorer */}

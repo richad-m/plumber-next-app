@@ -3,7 +3,7 @@ import { FirstStepOptions } from "../../constants/appointmentSteps";
 export interface AppointmentFormValues {
   firstAnswer?: FirstStepOptions;
   secondAnswer?: string;
-  uploadedPhotos?: FileList;
+  uploadedPhotos?: File[];
   inputDescription?: string;
   contact?: {
     name?: string;

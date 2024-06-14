@@ -18,22 +18,16 @@ function FileImport({
     React.SetStateAction<AppointmentFormValues>
   >;
 }) {
-  const uploadHandler = (files: FileList | null): void => {
+  const uploadHandler = (file: File): void => {
     try {
-      if (!files) {
-        return;
-      }
-      const uploadedFile = files[0];
-      console.log(files);
-      if (
-        uploadedFile.size > MAXIMUM_FILE_SIZE ||
-        !uploadedFile.type.includes("image")
-      ) {
+      if (file.size > MAXIMUM_FILE_SIZE || !file.type.includes("image")) {
         return;
       }
       setAppointmentFormValues((previousValues) => ({
         ...previousValues,
-        uploadedPhotos: files,
+        uploadedPhotos: previousValues?.uploadedPhotos?.length
+          ? [...previousValues?.uploadedPhotos, file]
+          : [file],
       }));
     } catch (error: unknown) {
       console.error(

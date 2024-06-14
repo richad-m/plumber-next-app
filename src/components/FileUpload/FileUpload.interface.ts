@@ -1,6 +1,6 @@
 export interface IFileUpload {
   acceptedFormats?: string[];
-  uploadHandler: (files: FileList | null) => void;
+  uploadHandler: (file: File) => void;
   textItems?: {
     mainText: string;
     subText?: string;
