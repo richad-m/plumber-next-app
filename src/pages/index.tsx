@@ -7,6 +7,7 @@ import { useState } from "react";
 import AppointmentModal from "../components/AppointmentModal/AppointmentModal";
 import Head from "next/head";
 import { Footer } from "../components/Footer/Footer";
+import { FloatingWhatsappButton } from "../components/FloatingWhatsappButton/FloatingWhatsappButton";
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -27,6 +28,7 @@ export default function Home() {
         isOpen={isModalOpen}
       />
       <Footer />
+      <FloatingWhatsappButton />
     </>
   );
 }
