@@ -1,7 +1,7 @@
 import WhatsappIcon from "../../../assets/WhatsappIcon";
 import { WHATSAPP_PHONE_NUMBER } from "../../constants/phoneNumber";
 import {
-  RoundedButton,
+  WhatsappLink,
   FloatingWhatsappButtonContainer,
   ToolTipContainer,
 } from "./FloatingWhatsappButton.style";
@@ -10,12 +10,12 @@ export function FloatingWhatsappButton(): JSX.Element {
   return (
     <FloatingWhatsappButtonContainer>
       <ToolTipContainer>Discuter sur WhatsApp avec Antoine</ToolTipContainer>
-      <RoundedButton
-        forwardedAs={"a"}
+      <WhatsappLink
         href={`https://wa.me/${WHATSAPP_PHONE_NUMBER}`}
+        target="_blank"
       >
         <WhatsappIcon />
-      </RoundedButton>
+      </WhatsappLink>
     </FloatingWhatsappButtonContainer>
   );
 }

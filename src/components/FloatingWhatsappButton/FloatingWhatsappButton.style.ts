@@ -13,16 +13,8 @@ export const ToolTipContainer = styled.div`
   bottom: 4rem;
   width: 15rem;
 `;
-export const RoundedButton = styled.button`
+export const WhatsappLink = styled.a`
   position: relative;
-  background-color: #25d366;
-  border-radius: 100%;
-  aspect-ratio: 1/1;
-  display: flex;
-  align-items: center;
-  background-color: var(--whatsapp-green);
-  width: 4rem;
-  justify-content: center;
 `;
 
 export const FloatingWhatsappButtonContainer = styled.div`
@@ -31,6 +23,13 @@ export const FloatingWhatsappButtonContainer = styled.div`
   z-index: 5;
   right: 0;
   margin: 1.2rem;
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  background-color: var(--whatsapp-green);
+  width: 4rem;
+  justify-content: center;
+  border-radius: 100%;
 
   &:hover ${ToolTipContainer} {
     visibility: visible;
@@ -38,7 +37,7 @@ export const FloatingWhatsappButtonContainer = styled.div`
     opacity: 1;
   }
 
-  &:hover ${RoundedButton} {
+  &:hover {
     background-color: var(--whatsapp-dark-green);
     transition: background-color 0.4s;
   }
