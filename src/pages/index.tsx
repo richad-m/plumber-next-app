@@ -8,6 +8,7 @@ import AppointmentModal from "../components/AppointmentModal/AppointmentModal";
 import Head from "next/head";
 import { Footer } from "../components/Footer/Footer";
 import { FloatingWhatsappButton } from "../components/FloatingWhatsappButton/FloatingWhatsappButton";
+import { ReviewSection } from "../components/ReviewSection";
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -21,6 +22,7 @@ export default function Home() {
         <Banner openAppointmentModal={() => setIsModalOpen(true)} />
         <ServiceSection />
         <PlumberSection openAppointmentModal={() => setIsModalOpen(true)} />
+        <ReviewSection />
         <PartnershipSection />
       </main>
       <AppointmentModal
