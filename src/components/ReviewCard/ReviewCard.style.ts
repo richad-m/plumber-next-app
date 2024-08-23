@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ReviewCardContainer = styled.div`
-  border: 1px solid var(--accent-color);
+  border: 1px solid var(--accentColor);
   padding: 1.4rem;
   border-radius: 0.4rem;
   width: fit-content;
