@@ -105,6 +105,16 @@ function AppointmentModal({
   const shouldDisplaySubmitButton =
     AppointmentStepsWithSubmitButton.includes(currentStep);
 
+  useEffect(() => {
+    if (
+      currentOptions &&
+      !Object.keys(currentOptions).length &&
+      currentStep === AppointmentSteps.QUALIFICATION_2
+    ) {
+      goToNextStep();
+    }
+  }, [currentOptions, currentStep]);
+
   return (
     <Modal
       title={getModalTitle(currentStep, appointmentFormValues?.firstAnswer)}

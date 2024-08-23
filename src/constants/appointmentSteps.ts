@@ -38,6 +38,10 @@ export enum FirstStepOptions {
   FUITES = "Fuites d'eau",
   CANALISATIONS = "Canalisation bouchées",
   AUTRES = "Autres problèmes de plomberie",
+  SLAMMED_DOOR_OPEENING = "Ouverture de porte claquée",
+  LOCKED_DOOR_OPENING = "Ouverture de porte verrouillée",
+  LOCK_INSTALLATION = "Installation de serrure",
+  WINDOW_LOCK_REPLCAMENT = "Remplacement vitrage de fenêtre",
 }
 
 export const FIRST_STEP_OPTIONS_TO_TITLE: Record<FirstStepOptions, string> = {
@@ -47,6 +51,11 @@ export const FIRST_STEP_OPTIONS_TO_TITLE: Record<FirstStepOptions, string> = {
   [FirstStepOptions.FUITES]: "Un problème de fuite ?",
   [FirstStepOptions.CANALISATIONS]: "Un problème de canalisations ?",
   [FirstStepOptions.AUTRES]: "Un problème ?",
+  [FirstStepOptions.SLAMMED_DOOR_OPEENING]: "Une porte claquée ?",
+  [FirstStepOptions.LOCKED_DOOR_OPENING]: "Une porte verrouillée ?",
+  [FirstStepOptions.LOCK_INSTALLATION]: "Une installation de serrure ?",
+  [FirstStepOptions.WINDOW_LOCK_REPLCAMENT]:
+    "Un remplacement de vitrage de fenêtre ?",
 };
 
 export const STEP_TO_TITLE = {
@@ -170,6 +179,10 @@ export const LABEL_TO_ICON: Partial<Record<FirstStepOptions, Icons>> = {
   [FirstStepOptions.ROBINETS]: Icons.FaucetIcon,
   [FirstStepOptions.CANALISATIONS]: Icons.PipeIcon,
   [FirstStepOptions.FUITES]: Icons.WaterIcon,
+  [FirstStepOptions.SLAMMED_DOOR_OPEENING]: Icons.SlammedDoorOpeningIcon,
+  [FirstStepOptions.LOCKED_DOOR_OPENING]: Icons.LockedDoorOpeningIcon,
+  [FirstStepOptions.LOCK_INSTALLATION]: Icons.LockInstallation,
+  [FirstStepOptions.WINDOW_LOCK_REPLCAMENT]: Icons.WindowGlazing,
 };
 
 export interface ThirdStepOptionsMap {
@@ -240,4 +253,8 @@ export const FLOW: FlowType = {
     [SecondStepsOptions.BAIGNOIRE_DOUCHE]: undefined,
     [SecondStepsOptions.AUTRE]: undefined,
   },
+  [FirstStepOptions.SLAMMED_DOOR_OPEENING]: {},
+  [FirstStepOptions.LOCKED_DOOR_OPENING]: {},
+  [FirstStepOptions.LOCK_INSTALLATION]: {},
+  [FirstStepOptions.WINDOW_LOCK_REPLCAMENT]: {},
 };

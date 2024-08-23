@@ -18,6 +18,6 @@ export const FileUploadImportContainer = styled.div`
   }
 
   @media screen and (max-width: 780px) {
-    padding: 2.4rem;
+    padding: 1.2rem;
   }
 `;

@@ -26,8 +26,10 @@ export function FirstStep({
     React.SetStateAction<AppointmentFormValues>
   >;
 }) {
-  const chooseOption = (options: FirstStepOptionsMap): void => {
-    setCurrentOptions(options);
+  const chooseOption = (options?: FirstStepOptionsMap): void => {
+    if (options) {
+      setCurrentOptions(options);
+    }
     goToNextStep();
   };
   return (
@@ -42,7 +44,7 @@ export function FirstStep({
               firstAnswer: option as FirstStepOptions,
             }));
             chooseOption(
-              FLOW[option as FirstStepOptions] as FirstStepOptionsMap
+              FLOW?.[option as FirstStepOptions] as FirstStepOptionsMap
             );
           }}
         />

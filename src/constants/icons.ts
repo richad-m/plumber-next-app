@@ -4,4 +4,8 @@ export enum Icons {
   FaucetIcon = "FaucetIcon",
   PipeIcon = "PipeIcon",
   WaterIcon = "WaterIcon",
+  SlammedDoorOpeningIcon = "SlammedDoor",
+  LockedDoorOpeningIcon = "LockedDoor",
+  LockInstallation = "ShieldDoor",
+  WindowGlazing = "WindowGlazing",
 }

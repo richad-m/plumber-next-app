@@ -20,7 +20,7 @@ export const getEmailBody = (fields: AppointmentFormData["fields"]): string => {
     <p> Adresse : ${address} </p> 
     <p> Téléphone : <a href="tel:${phoneNumber}">${phoneNumber}</a> </p> 
     <p> Catégorie : ${firstAnswer} </p> 
-    <p> Sous catégorie : ${secondAnswer} </p> 
+    <p> Sous catégorie : ${secondAnswer || "pas de sous catégories"} </p> 
     <p> Description : ${inputDescription} </p> 
     `;
 };
